@@ -1,0 +1,104 @@
+{
+  "usuario": {
+    "usuario": "diego@gmail.com",
+    "contrasena": "123"
+  },
+  "aboutMe": {
+    "name": "Diego",
+    "lastName": "Salvañá",
+    "age": 32,
+    "aboutMeText": "Soy Diego Salvañá, estudiante de programación en constante apendizaje de tecnologías para el desarrollo de aplicaciones y sitios web."
+  },
+  "educacion": [
+    {
+      "id": 1,
+      "institucion": "Argentina Programa",
+      "carrera": "Curso desarrollador FullStack",
+      "estado": "2021-2022"
+    },
+    {
+      "id": 2,
+      "institucion": "Instituto Politécnico Superior de Rosario",
+      "carrera": "Técnico Universitario en Química",
+      "estado": "2010-2014"
+    },
+    {
+      "id": 3,
+      "institucion": "Instituto Politécnico Superior de Rosario",
+      "carrera": "Secundario",
+      "estado": "2001-2007"
+    }
+  ],
+  "experiencia": [
+    {
+      "id": 1,
+      "empresa": "Empresa",
+      "funcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis facilis, explicabo adipisci omnis perferendis.",
+      "anio": "2020-2021"
+    },
+    {
+      "id": 2,
+      "empresa": "Empresa",
+      "funcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis facilis, explicabo adipisci omnis perferendis.",
+      "anio": "2016-2019"
+    }
+  ],
+  "proyectos": [
+    {
+      "id": 1,
+      "nombre": "Portfolio",
+      "descripcion": "Portfolio personal desarrollado en Angular para Front-end, y en Back-end Java, Spring Boot y MySQL.",
+      "link": "https://github.com/Diego-Salvana/Argentina-Programa-Portafolio"
+    }
+  ],
+  "habilidades": [
+    {
+      "id": 1,
+      "iconoHTML": "<i class='fa-brands fa-html5'></i>",
+      "titulo": "HTML 5",
+      "porcentaje": 80
+    },
+    {
+      "id": 2,
+      "iconoHTML": "<i class='fa-brands fa-css3-alt'></i>",
+      "titulo": "CSS 3",
+      "porcentaje": 80
+    },
+    {
+      "id": 3,
+      "iconoHTML": "<i class='fa-brands fa-js'></i>",
+      "titulo": "JavaScript",
+      "porcentaje": 70
+    },
+    {
+      "id": 4,
+      "iconoHTML": "<i class='fa-brands fa-java'></i>",
+      "titulo": "Java",
+      "porcentaje": 60
+    },
+    {
+      "id": 5,
+      "iconoHTML": "<i class='fa-brands fa-angular'></i>",
+      "titulo": "Angular",
+      "porcentaje": 60
+    },
+    {
+      "id": 6,
+      "iconoHTML": "<i class='fa-brands fa-bootstrap'></i>",
+      "titulo": "Bootstrap",
+      "porcentaje": 75
+    },
+    {
+      "id": 7,
+      "iconoHTML": "<i class='fa-brands fa-github'></i>",
+      "titulo": "Git-Hub",
+      "porcentaje": 75
+    },
+    {
+      "id": 8,
+      "iconoHTML": "<img src='../../../assets/mysql.png' alt='' />",
+      "titulo": "MySQL",
+      "porcentaje": 50
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+.footer {
+   color: var(--surface-400);
+   background-color: #000d;
+   min-height: 140px;
+   padding: 30px 11vw 30px;
+   font-size: 1.25rem;
+   font-weight: normal;
+}
+
+a {
+   text-decoration: none;
+   padding-bottom: 0.25rem;
+   cursor: pointer;
+   transition: all 0.1s ease-out;
+}
+
+a:hover {
+   color: var(--surface-300);
+   border-bottom: 3px solid var(--green-400);
+}
+
+li {
+   margin-bottom: 0.25rem;
+}
+
+.line {
+   height: 0.5rem;
+   background-color: var(--green-700);
+   border-radius: 50%;
+}

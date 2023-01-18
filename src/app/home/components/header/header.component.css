@@ -1,0 +1,72 @@
+.bg {
+   position: absolute;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   margin: auto;
+   background-image: url("../../../../assets/fondo-pc.jpg");
+   /* filter: brightness(0.6); */
+}
+
+.perfil-container {
+   min-height: 70vh;
+   position: relative;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin: auto;
+}
+
+.perfil__foto {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+}
+
+.img-container {
+   width: 25vw;
+   height: 25vw;
+   max-width: 240px;
+   max-height: 240px;
+   min-width: 210px;
+   min-height: 210px;
+   margin: 30px auto;
+   border-radius: 50%;
+   overflow: hidden;
+   filter: brightness(0.8);
+   transition: filter 0.3s ease;
+   user-select: none;
+}
+
+.img-container:hover {
+   filter: brightness(1);
+}
+
+.img-container img {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+}
+
+.perfil__text {
+   color: var(--surface-800);
+   padding-left: 2vw;
+   z-index: 100;
+}
+
+.perfil__text h2 {
+   font-size: calc(1.9rem + 0.6vw);
+   font-weight: 500;
+}
+
+.perfil__text h3 {
+   font-size: calc(1.5rem + 0.6vw);
+   font-weight: 400;
+}
+
+.perfil__text h4 {
+   font-size: calc(1rem + 0.6vw);
+   font-weight: 200;
+}

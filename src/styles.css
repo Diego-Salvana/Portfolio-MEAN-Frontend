@@ -1,1 +1,51 @@
-/* You can add global styles to this file, and also import other style files */
+*,
+*::before,
+*::after {
+   box-sizing: border-box;
+   padding: 0;
+   margin: 0;
+}
+
+a {
+   text-decoration: none;
+}
+
+html,
+body {
+   background-color: var(--bluegray-900);
+   background-color: var(--surface-b);
+   font-family: var(--font-family);
+   color: var(--text-color);
+}
+
+section {
+   position: relative;
+   padding-bottom: 8rem;
+   margin-bottom: 4rem;
+   border-bottom-style: solid;
+   border-bottom-width: 1px;
+   border-image: radial-gradient(#ccc1, 95%, transparent) 1;
+   overflow-x: hidden;
+}
+
+section > h2 {
+   padding-top: 2rem;
+   margin-bottom: 4.5rem;
+   text-align: center;
+   color: #f9b627;
+   font-size: calc(1.5rem + 0.9vw);
+   font-weight: 400;
+}
+
+.studies .icon-container {
+   border-right: none;
+}
+
+.studies .card-project {
+   padding-bottom: 1rem !important;
+   padding-top: 0.5rem !important;
+}
+
+.studies p {
+   margin-bottom: 0.5rem !important;
+}

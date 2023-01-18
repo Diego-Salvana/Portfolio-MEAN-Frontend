@@ -1,0 +1,13 @@
+.card-project {
+   display: flex;
+   justify-content: start;
+   padding: 2rem 4vw;
+   margin: auto;
+   background-color: var(--surface-card);
+   border-radius: 1rem;
+   max-width: 1100px;
+}
+
+.float {
+   float: right;
+}
