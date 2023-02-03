@@ -1,0 +1,127 @@
+{
+  "users": {
+    "user": "diego@gmail.com",
+    "password": "123"
+  },
+  "about-me": {
+    "name": "Diego",
+    "lastName": "Salvañá",
+    "aboutMeText": "Estudiante de programación en constante apendizaje de tecnologías para la creación de aplicaciones y sitios web. Desarrollando proyectos principalmente en Angular. "
+  },
+  "projects": [
+    {
+      "id": 1,
+      "name": "Portfolio",
+      "description": "Portfolio personal desarrollado en Angular para Front-end, y en Back-end Java, Spring Boot y MySQL.",
+      "linkWeb": "https://github.com/Diego-Salvana/Argentina-Programa-Portafolio",
+      "linkGitHub": "https://github.com/Diego-Salvana/Argentina-Programa-Portafolio"
+    },
+    {
+      "id": 2,
+      "name": "Galería de imágenes",
+      "description": "Front-end de sitio web para búsqueda de imágenes.",
+      "linkWeb": "https://github.com/Diego-Salvana/Argentina-Programa-Portafolio",
+      "linkGitHub": "https://github.com/Diego-Salvana/Argentina-Programa-Portafolio"
+    },
+    {
+      "id": 4,
+      "name": "hola mundo ",
+      "description": "Portfolio personal desarrollado en Angular para Front-end, y en Back-end Java, Spring Boot y MySQL.",
+      "linkWeb": "",
+      "linkGitHub": "https://github.com/Diego-Salvana/Argentina-Programa-Portafolio"
+    },
+    {
+      "id": 20,
+      "name": "Portfoliossssssss",
+      "description": "Portfolio personal desarrollado en Angular para Front-end, y en Back-end Java, Spring Boot y MySQL.",
+      "linkWeb": "https://github.com/Diego-Salvana/Argentina-Programa-Portafolio",
+      "linkGitHub": "https://github.com/Diego-Salvana/Argentina-Programa-Portafolio"
+    },
+    {
+      "id": 21,
+      "name": "d",
+      "description": "d",
+      "linkWeb": "d",
+      "linkGitHub": "d"
+    }
+  ],
+  "skills": [
+    {
+      "id": 1,
+      "name": "HTML 5",
+      "iconHTML": "<i class='fa-brands fa-html5'></i>",
+      "color": "orange"
+    },
+    {
+      "id": 2,
+      "name": "CSS 3",
+      "iconHTML": "<i class='fa-brands fa-css3-alt'></i>",
+      "color": "deepblue"
+    },
+    {
+      "id": 3,
+      "name": "JavaScript",
+      "iconHTML": "<i class='fa-brands fa-js'></i>",
+      "color": "yellow"
+    },
+    {
+      "id": 4,
+      "name": "Java",
+      "iconHTML": "<i class='fa-brands fa-java'></i>",
+      "color": "red"
+    },
+    {
+      "id": 5,
+      "name": "Angular",
+      "iconHTML": "<i class='fa-brands fa-angular'></i>",
+      "color": "red"
+    },
+    {
+      "id": 6,
+      "name": "Bootstrap",
+      "iconHTML": "<i class='fa-brands fa-bootstrap'></i>",
+      "color": "blue"
+    },
+    {
+      "id": 7,
+      "name": "Git-Hub",
+      "iconHTML": "<i class='fa-brands fa-github'></i>",
+      "color": "gray"
+    },
+    {
+      "id": 8,
+      "name": "Git-Hub",
+      "iconHTML": "<i class='fa-brands fa-github'></i>",
+      "color": "gray"
+    },
+    {
+      "id": 9,
+      "name": "Git-Hub",
+      "iconHTML": "<i class='fa-brands fa-github'></i>",
+      "color": "gray"
+    }
+  ],
+  "studies": [
+    {
+      "id": 1,
+      "name": "Técnico Universitario en Química",
+      "institution": "Instituto Politécnico Superior de Rosario",
+      "start": "2010",
+      "end": "2014"
+    },
+    {
+      "id": 2,
+      "name": "Curso desarrollador FullStack",
+      "institution": "Argentina Programa",
+      "start": "2021",
+      "end": "2022"
+    },
+    {
+      "id": 3,
+      "name": "Curso Angular",
+      "institution": "Udemy",
+      "start": "2022",
+      "end": ""
+    }
+  ]
+}

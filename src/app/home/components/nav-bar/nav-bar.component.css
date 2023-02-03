@@ -20,7 +20,7 @@
 }
 
 .p-toolbar-group-end i:hover {
-   color: var(--surface-400);
+   color: var(--surface-200);
 }
 
 @media screen and (min-width: 1000px) {

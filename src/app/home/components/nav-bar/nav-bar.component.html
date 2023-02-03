@@ -1,4 +1,4 @@
-<div class="toolbar-container py-1">
+<div id="inicio" class="toolbar-container py-1">
   <p-toolbar>
     <div class="p-toolbar-group-start">
       <img
@@ -30,6 +30,7 @@
       <app-button-primeng
         class="p-button-primary"
         label="Iniciar Sesión"
+        (click)="goLogin()"
       ></app-button-primeng>
     </div>
   </p-toolbar>

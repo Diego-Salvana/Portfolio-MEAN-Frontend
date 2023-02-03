@@ -1,0 +1,77 @@
+<!-- <h5>Modal</h5>
+<p-button
+  (click)="showModalDialog()"
+  icon="pi pi-external-link"
+  label="Show"
+></p-button> -->
+
+<p-dialog
+  [(visible)]="displayModal"
+  [modal]="true"
+  [breakpoints]="{ '960px': '75vw', '640px': '100vw' }"
+  [style]="{ width: '50vw' }"
+  [draggable]="false"
+  [resizable]="false"
+  (onHide)="hide()"
+>
+  <ng-template pTemplate="header">
+    <h3 class="text-3xl font-normal">Modicficar Habilidad</h3>
+  </ng-template>
+  <div>
+    <form [formGroup]="formSkill" autocomplete="off">
+      <div
+        class="form-skill-icon"
+        [innerHTML]="formSkill.value.icon || icon"
+      ></div>
+      <div class="field">
+        <span class="p-float-label">
+          <input
+            id="skillName"
+            class="p-inputtext-lg w-12"
+            type="text"
+            pInputText
+            formControlName="name"
+          />
+          <label for="skillName">Nombre</label>
+          <!-- <small id="float-input" class="p-error block">Username is not available.</small> -->
+        </span>
+      </div>
+
+      <div class="field">
+        <span class="p-float-label">
+          <textarea
+            id="skillIcon"
+            [rows]="3"
+            pInputTextarea
+            class="w-12 text-lg"
+            formControlName="icon"
+          ></textarea>
+          <label for="skillIcon">Ícono (HTML)</label>
+          <!-- <small id="float-input" class="p-error block">Username is not available.</small> -->
+        </span>
+      </div>
+
+      <div class="field">
+        <span class="p-float-label">
+          <input
+            id="color"
+            class="p-inputtext-lg w-12"
+            type="text"
+            pInputText
+            formControlName="color"
+          />
+          <label for="color">Color</label>
+          <!-- <small id="float-input" class="p-error block">Username is not available.</small> -->
+        </span>
+      </div>
+    </form>
+  </div>
+  <ng-template pTemplate="footer">
+    <p-button
+      icon="pi pi-check"
+      (click)="close()"
+      label="Ok"
+      styleClass="p-button-text"
+    ></p-button>
+  </ng-template>
+</p-dialog>

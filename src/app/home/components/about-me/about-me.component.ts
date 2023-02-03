@@ -1,18 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 
+import { AboutMeService } from '../../services/about-me.service';
+
 @Component({
-  selector: 'app-about-me',
-  templateUrl: './about-me.component.html',
-  styleUrls: ['./about-me.component.css']
+   selector: 'app-about-me',
+   templateUrl: './about-me.component.html',
+   styleUrls: ['./about-me.component.css'],
 })
 export class AboutMeComponent implements OnInit {
-   aboutMe: string = 'Estudiante de programación en constante apendizaje de tecnologías para la creación de aplicaciones y sitios web. Desarrollando proyectos principalmente en Angular.';
-   // classBtnEdit: string = 'p-button-raised p-button-info p-button-text p-button-lg';
+   aboutMe: string = '';
    logged: boolean = true;
 
-  constructor() { }
+   constructor(private aboutSvc: AboutMeService) {}
 
-  ngOnInit(): void {
-  }
-
+   ngOnInit(): void {
+      this.aboutSvc
+         .get()
+         .subscribe(({ aboutMeText }) => (this.aboutMe = aboutMeText));
+   }
 }

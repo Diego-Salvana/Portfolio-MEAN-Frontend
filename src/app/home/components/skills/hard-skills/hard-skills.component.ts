@@ -1,16 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
-  selector: 'app-hard-skills',
-  templateUrl: './hard-skills.component.html',
-  styleUrls: ['./hard-skills.component.css']
+   selector: 'app-hard-skills',
+   templateUrl: './hard-skills.component.html',
+   styleUrls: ['./hard-skills.component.css'],
 })
-export class HardSkillsComponent implements OnInit {
+export class HardSkillsComponent {
    mouseOver: boolean = false;
+   @Input() name: string = '';
+   @Input() skillIcon: string = '';
+   @Input() colorIcon: string = '';
+   @Output() onEdit: EventEmitter<any> = new EventEmitter();
+   @Output() onDelete: EventEmitter<any> = new EventEmitter();
 
-  constructor() { }
+   constructor() {}
 
-  ngOnInit(): void {
-  }
+   editEmit(): void {
+      this.onEdit.emit();
+   }
 
+   deleteEmit(): void {
+      this.onDelete.emit();
+   }
 }

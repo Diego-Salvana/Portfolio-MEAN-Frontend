@@ -1,0 +1,33 @@
+<form [formGroup]="formAboutMe" (submit)="onSaveEmit()" autocomplete="off">
+  <h2 class="form-title">Modificar Acerca</h2>
+  <div class="field">
+    <span class="p-float-label">
+      <textarea
+        id="text-area"
+        [rows]="8"
+        pInputTextarea
+        [autoResize]="true"
+        class="w-12 text-lg"
+        formControlName="aboutMeText"
+      ></textarea>
+      <label for="text-area">Acerca de mí</label>
+    </span>
+    <small *ngIf="invalidField('aboutMeText')" class="p-error block">
+      El campo es obligatorio.
+    </small>
+  </div>
+
+  <div class="line-form"></div>
+
+  <div class="text-center sm:text-left py-3">
+    <app-button-primeng
+      class="p-button-info w-11 sm:w-10rem text-lg py-2"
+      label="Guardar"
+      type="submit"
+      [loadingSatate]="loadingBtn"
+    ></app-button-primeng>
+  </div>
+  <div class="text-center mt-5">
+    <app-btn-back-portfolio></app-btn-back-portfolio>
+  </div>
+</form>

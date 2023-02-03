@@ -4,18 +4,17 @@
   (mouseleave)="mouseOver = false"
 >
   <div class="flex justify-content-evenly pb-3">
-    <app-edit-button></app-edit-button>
-    <app-delete-button></app-delete-button>
+    <app-edit-button (click)="editEmit()"></app-edit-button>
+    <app-delete-button (click)="deleteEmit()"></app-delete-button>
   </div>
 
   <div
     class="transition-all transition-duration-400 transition-ease-in text-8xl"
-    [innerHTML]=""
-    [ngStyle]="{ color: mouseOver ? 'yellow' : '' }"
+    [innerHTML]="skillIcon"
+    [ngStyle]="{ color: mouseOver ? colorIcon : '' }"
   >
-    <!-- <i class="pi pi-reddit text-8xl"></i> -->
     <i class="fa-brands fa-square-js"></i>
   </div>
 
-  <h6 class="text-center py-2 text-xl font-normal">Reddit</h6>
+  <h6 class="text-center py-2 text-xl font-normal">{{ name }}</h6>
 </div>

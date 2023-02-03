@@ -1,20 +1,22 @@
 <section id="formacion" class="studies-container border-none mb-0">
-  <app-add-button></app-add-button>
+  <app-add-button routerLink="/edition/create/study"></app-add-button>
 
-  <h2>Formación</h2>
+  <h2 #h class="hola">Formación</h2>
 
   <div class="w-11 lg:w-10 xl:w-8 m-auto py-4 surface-card border-round-2xl">
-    <div class="studies">
+    <div *ngFor="let item of studies" class="studies">
       <app-card-project
         typeCard="study"
         classIcon="pi pi-book text-6xl text-purple-700"
-      ></app-card-project>
-    </div>
-    <div class="studies">
-      <app-card-project
-        typeCard="study"
-        classIcon="pi pi-book text-6xl text-purple-700"
+        editLink="/edition/edit/study/{{ item.id }}"
+        [name]="item.name"
+        [description]="item.institution || ''"
+        [start]="item.start"
+        [end]="item.end || ''"
+        (onDelete)="delete(item.id)"
       ></app-card-project>
     </div>
   </div>
 </section>
+
+<app-alert-confirm key="studyAlert"></app-alert-confirm>

@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
 
-import { PrimeNgModule } from '../prime-ng/prime-ng.module';
 import { SharedModule } from '../shared/shared.module';
 
 import { AboutMeComponent } from './components/about-me/about-me.component';
@@ -15,6 +16,7 @@ import { ProjectsComponent } from './components/projects/projects.component';
 import { SkillsComponent } from './components/skills/skills.component';
 import { SoftSkillsComponent } from './components/skills/soft-skills/soft-skills.component';
 import { StudiesComponent } from './components/studies/studies.component';
+import { ModalFormComponent } from './components/skills/modal-form/modal-form.component';
 
 @NgModule({
    declarations: [
@@ -29,8 +31,9 @@ import { StudiesComponent } from './components/studies/studies.component';
       SkillsComponent,
       SoftSkillsComponent,
       StudiesComponent,
+      ModalFormComponent,
    ],
-   imports: [CommonModule, PrimeNgModule, SharedModule],
+   imports: [CommonModule, RouterModule, ReactiveFormsModule, SharedModule],
    exports: [HomePageComponent],
 })
 export class HomeModule {}

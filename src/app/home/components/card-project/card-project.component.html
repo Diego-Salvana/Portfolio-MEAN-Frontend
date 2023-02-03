@@ -4,28 +4,31 @@
   >
     <i [class]="classIcon"></i>
   </div>
-  <div class="md:pl-5">
+  <div class="md:pl-5 w-12">
     <div class="float">
-      <app-edit-button></app-edit-button>
-      <app-delete-button></app-delete-button>
+      <app-edit-button [routerLink]="editLink"></app-edit-button>
+      <app-delete-button (click)="deleteEmit()"></app-delete-button>
     </div>
 
-    <h3 class="text-4xl font-normal mb-2">Nombre del proyecto</h3>
+    <h3
+      class="text-2xl md:text-3xl xl:text-4xl font-normal mb-2"
+      [ngClass]="{ 'h-study': typeCard === 'study' }"
+    >
+      {{ name }}
+    </h3>
 
-    <p class="text-xl mb-4 text-500">
-      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit laudantium
-      qui itaque eligendi sint, dolorem delectus minus.
-    </p>
+    <p class="text-xl mb-4 text-500">{{ description }}</p>
 
     <div *ngIf="typeCard === 'project'">
-      <a href="">
+      <a *ngIf="linkWeb" [href]="linkWeb" target="_blank" rel="noopener">
         <app-button-primeng
           class="p-button-rounded p-button-outlined p-button-success mr-2"
           label="Web"
           icon="pi pi-globe"
         ></app-button-primeng>
       </a>
-      <a href="">
+
+      <a *ngIf="linkGitHub" [href]="linkGitHub" target="_blank" rel="noopener">
         <app-button-primeng
           class="p-button-rounded p-button-outlined text-indigo-300"
           label="Git-Hub"
@@ -35,8 +38,8 @@
     </div>
 
     <div *ngIf="typeCard === 'study'">
-      <span class="text-xl mb-4 text-500">Inicio </span>
-      <span class="text-xl mb-4 text-500">- Fin</span>
+      <span class="text-xl mb-4 text-500">{{ start }} </span>
+      <span *ngIf="end" class="text-xl mb-4 text-500">- {{ end }}</span>
     </div>
   </div>
 </div>

@@ -1,0 +1,14 @@
+.p-float-label textarea:focus ~ label,
+.p-float-label input:focus ~ label {
+   color: var(--blue-300);
+}
+
+.p-inputtext:enabled:hover,
+.p-inputtext:enabled:focus {
+   border-color: #4fc3f7;
+}
+
+.line-form {
+   background-color: var(--blue-600);
+   border-radius: 50%;
+}

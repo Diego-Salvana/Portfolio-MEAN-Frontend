@@ -1,18 +1,26 @@
-<section id="habilidades" class="min-h-screen">
-  <app-add-button></app-add-button>
+<section id="habilidades">
+  <app-add-button routerLink="/edition/create/skill"></app-add-button>
 
   <h2>Habilidades</h2>
 
-  <div class="flex flex-wrap justify-content-center row-gap-6 w-11 m-auto pb-8 mb-7">
-    <app-hard-skills></app-hard-skills>
-    <app-hard-skills></app-hard-skills>
-    <app-hard-skills></app-hard-skills>
-    <app-hard-skills></app-hard-skills>
-    <app-hard-skills></app-hard-skills>
-    <app-hard-skills></app-hard-skills>
-    <app-hard-skills></app-hard-skills>
-    <app-hard-skills></app-hard-skills>
+  <div
+    class="flex flex-wrap justify-content-center row-gap-6 w-11 m-auto pb-8 mb-7"
+  >
+    <app-hard-skills
+      *ngFor="let item of skills"
+      [name]="item.name"
+      [skillIcon]="item.iconHTML"
+      [colorIcon]="item.color || ''"
+      (onEdit)="displayModal = true"
+      (onDelete)="delete(item.id)"
+    ></app-hard-skills>
   </div>
 
   <app-soft-skills></app-soft-skills>
 </section>
+
+<!-- MODAL -->
+<app-modal-form
+  [displayModal]="displayModal"
+  (hideModal)="displayModal = false"
+></app-modal-form>

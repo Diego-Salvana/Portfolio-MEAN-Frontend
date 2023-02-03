@@ -12,10 +12,11 @@ a {
 
 html,
 body {
-   background-color: var(--bluegray-900);
+   width: 100%;
    background-color: var(--surface-b);
    font-family: var(--font-family);
    color: var(--text-color);
+   scroll-behavior: smooth;
 }
 
 section {
@@ -49,3 +50,72 @@ section > h2 {
 .studies p {
    margin-bottom: 0.5rem !important;
 }
+
+/* Formularios */
+.main-form {
+   background-color: var(--surface-50);
+   width: 100%;
+   min-height: 100vh;
+   padding: 1rem;
+}
+
+.form-container {
+   background-color: var(--surface-50);
+   padding-top: 2rem;
+   padding-bottom: 5rem;
+   border-radius: 10px;
+   max-width: 550px;
+   margin: auto;
+}
+
+.edition-form {
+   max-width: 800px;
+}
+
+.form-title {
+   font-size: 2rem;
+   font-weight: 400;
+   text-align: center;
+   padding-bottom: 2rem;
+}
+
+.field {
+   padding-top: 2rem;
+}
+
+.p-float-label input:focus ~ label,
+.p-float-label textarea:focus ~ label {
+   color: var(--green-400);
+}
+
+.p-float-label > .ng-invalid.ng-dirty + label {
+   color: #e57373 !important;
+}
+
+.p-float-label > .ng-invalid.ng-dirty {
+   border-color: #e57373 !important;
+}
+
+.line-form {
+   height: 2px;
+   background-color: var(--green-900);
+   border-radius: 30%;
+   margin: 4rem 0 2rem;
+}
+
+@media screen and (min-width: 576px) {
+   .main-form {
+      background-color: #121212;
+   }
+
+   .form-container {
+      padding-left: 5rem;
+      padding-right: 5rem;
+      margin-top: 4rem;
+   }
+
+   .form-title {
+      font-size: 2.5rem;
+   }
+}
+

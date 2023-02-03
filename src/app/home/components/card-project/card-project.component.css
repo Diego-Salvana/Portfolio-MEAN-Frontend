@@ -1,6 +1,6 @@
 .card-project {
    display: flex;
-   justify-content: start;
+   justify-content: flex-start;
    padding: 2rem 4vw;
    margin: auto;
    background-color: var(--surface-card);
@@ -10,4 +10,10 @@
 
 .float {
    float: right;
+}
+
+@media screen and (min-width: 900px) {
+   .h-study {
+      font-size: 1.75rem !important;
+   }
 }

@@ -1,3 +1,9 @@
 <div>
-  <app-home-page></app-home-page>
+  <router-outlet></router-outlet>
 </div>
+
+<p-toast
+  [breakpoints]="{ '500px': { width: '100%', right: '0', left: '0' } }"
+  position="bottom-right"
+  key="t-1"
+></p-toast>

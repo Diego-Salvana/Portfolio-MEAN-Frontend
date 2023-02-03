@@ -1,20 +1,22 @@
 <section id="proyectos">
-  <app-add-button></app-add-button>
+  <app-add-button routerLink="/edition/create/project"></app-add-button>
 
   <h2>Proyectos</h2>
 
   <div class="w-11 lg:w-10 xl:w-8 m-auto">
-    <div class="card-project">
+    <div *ngFor="let item of projects" class="card-project">
       <app-card-project
         typeCard="project"
         classIcon="pi pi-wrench text-7xl text-green-700"
-      ></app-card-project>
-    </div>
-    <div class="card-project">
-      <app-card-project
-        typeCard="project"
-        classIcon="pi pi-wrench text-7xl text-green-700"
+        editLink="/edition/edit/project/{{ item.id }}"
+        [name]="item.name"
+        [description]="item.description"
+        [linkWeb]="item.linkWeb || ''"
+        [linkGitHub]="item.linkGitHub || ''"
+        (onDelete)="delete(item.id)"
       ></app-card-project>
     </div>
   </div>
 </section>
+
+<app-alert-confirm key="projectAlert"></app-alert-confirm>
