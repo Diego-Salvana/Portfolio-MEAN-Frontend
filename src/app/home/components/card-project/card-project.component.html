@@ -1,17 +1,17 @@
 <div class="card-project w-12">
   <div
-    class="px-5 hidden md:flex align-items-center border-right-2 icon-container"
+    class="px-5 hidden md:flex align-items-center border-right-1 border-300 icon-container"
   >
     <i [class]="classIcon"></i>
   </div>
   <div class="md:pl-5 w-12">
-    <div class="float">
+    <div *ngIf="false" class="float">
       <app-edit-button [routerLink]="editLink"></app-edit-button>
       <app-delete-button (click)="deleteEmit()"></app-delete-button>
     </div>
 
     <h3
-      class="text-2xl md:text-3xl xl:text-4xl font-normal mb-2"
+      class="text-2xl md:text-3xl font-normal mb-2"
       [ngClass]="{ 'h-study': typeCard === 'study' }"
     >
       {{ name }}
@@ -22,7 +22,7 @@
     <div *ngIf="typeCard === 'project'">
       <a *ngIf="linkWeb" [href]="linkWeb" target="_blank" rel="noopener">
         <app-button-primeng
-          class="p-button-rounded p-button-outlined p-button-success mr-2"
+          class="p-button-raised p-button-success p-button-text p-button-rounded text-green-400 mr-2"
           label="Web"
           icon="pi pi-globe"
         ></app-button-primeng>
@@ -30,7 +30,7 @@
 
       <a *ngIf="linkGitHub" [href]="linkGitHub" target="_blank" rel="noopener">
         <app-button-primeng
-          class="p-button-rounded p-button-outlined text-indigo-300"
+          class="p-button-raised p-button-text p-button-rounded text-indigo-300"
           label="Git-Hub"
           icon="pi pi-github"
         ></app-button-primeng>

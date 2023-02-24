@@ -5,12 +5,21 @@
    right: 0;
    bottom: 0;
    margin: auto;
-   background-image: url("../../../../assets/fondo-pc.jpg");
-   /* filter: brightness(0.6); */
+   background-image: url("../../../../assets/laptop-2667131_1920.jpg");
+   background-repeat: no-repeat;
+   background-position: center;
+   filter: brightness(0.3);
+}
+
+.text-bg {
+   background-color: #0003;
+   border-radius: 10px;
+   text-shadow: 5px 5px 2px black;
 }
 
 .perfil-container {
-   min-height: 70vh;
+   height: 70vh;
+   min-height: 500px;
    position: relative;
    display: flex;
    justify-content: center;
@@ -23,6 +32,7 @@
    flex-direction: column;
    align-items: center;
    justify-content: center;
+   transform: translateY(-1rem);
 }
 
 .img-container {
@@ -41,7 +51,7 @@
 }
 
 .img-container:hover {
-   filter: brightness(1);
+   filter: brightness(0.8);
 }
 
 .img-container img {
@@ -51,22 +61,24 @@
 }
 
 .perfil__text {
-   color: var(--surface-800);
    padding-left: 2vw;
    z-index: 100;
+   color: var(--surface-600);
+   transform: translateY(-1rem);
 }
 
 .perfil__text h2 {
-   font-size: calc(1.9rem + 0.6vw);
-   font-weight: 500;
+   font-size: calc(2.2rem + 0.3vw);
+   font-weight: 700;
+   color: #d39309;
 }
 
 .perfil__text h3 {
-   font-size: calc(1.5rem + 0.6vw);
+   font-size: calc(1.9rem + 0.3vw);
    font-weight: 400;
 }
 
 .perfil__text h4 {
-   font-size: calc(1rem + 0.6vw);
+   font-size: calc(1.35rem + 0.3vw);
    font-weight: 200;
 }

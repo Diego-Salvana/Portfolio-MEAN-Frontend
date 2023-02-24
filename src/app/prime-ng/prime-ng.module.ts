@@ -13,6 +13,7 @@ import { RippleModule } from 'primeng/ripple';
 import { ToastModule } from 'primeng/toast';
 import { ToolbarModule } from 'primeng/toolbar';
 import { TooltipModule } from 'primeng/tooltip';
+import { AnimateModule } from 'primeng/animate';
 
 @NgModule({
    exports: [

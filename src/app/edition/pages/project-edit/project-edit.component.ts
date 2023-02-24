@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { MessageService } from 'primeng/api';
 
-import { ProjectsService } from 'src/app/home/services/projects.service';
+import { ProjectsService } from 'src/app/shared/services/projects.service';
 
-import { Project } from 'src/app/home/interfaces/project.interface';
+import { Project } from 'src/app/shared/interfaces/project.interface';
 import { Router } from '@angular/router';
 
 @Component({

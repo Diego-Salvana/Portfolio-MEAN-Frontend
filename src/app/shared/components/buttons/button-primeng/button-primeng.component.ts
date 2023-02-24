@@ -10,5 +10,5 @@ export class ButtonPrimengComponent {
    @Input() label: string = '';
    @Input() icon: string = '';
    @Input() class: string = '';
-   @Input() loadingSatate: boolean = false;
+   @Input() loadingState: boolean = false;
 }

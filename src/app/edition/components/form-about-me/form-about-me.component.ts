@@ -1,8 +1,8 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
-import { AboutMeService } from 'src/app/home/services/about-me.service';
-import { AboutMe } from 'src/app/home/interfaces/about-me.interface';
+import { AboutMeService } from 'src/app/shared/services/about-me.service';
+import { AboutMe } from 'src/app/shared/interfaces/about-me.interface';
 import * as formHelper from '../../../shared/helpers/form.helper';
 
 @Component({

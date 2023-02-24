@@ -3,9 +3,10 @@ import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { PrimeNGConfig } from 'primeng/api';
 import { MessageService } from 'primeng/api';
 
-import { AboutMeService } from './home/services/about-me.service';
-import { ProjectsService } from './home/services/projects.service';
-import { StudiesService } from './home/services/studies.service';
+import { AboutMeService } from './shared/services/about-me.service';
+import { ProjectsService } from './shared/services/projects.service';
+import { SkillsService } from './shared/services/skills.service';
+import { StudiesService } from './shared/services/studies.service';
 
 @Component({
    selector: 'app-root',
@@ -18,7 +19,8 @@ export class AppComponent implements OnInit, AfterViewInit {
       private projectsSvc: ProjectsService,
       private messageSvc: MessageService,
       private aboutMeSvc: AboutMeService,
-      private studiesSvc: StudiesService
+      private studiesSvc: StudiesService,
+      private skillsSvc: SkillsService
    ) {}
 
    ngOnInit() {
@@ -35,6 +37,10 @@ export class AppComponent implements OnInit, AfterViewInit {
       );
 
       this.studiesSvc.toastContent$.subscribe((messageToast) =>
+         this.messageSvc.add(messageToast)
+      );
+
+      this.skillsSvc.toastContent$.subscribe((messageToast) =>
          this.messageSvc.add(messageToast)
       );
    }

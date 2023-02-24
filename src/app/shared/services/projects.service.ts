@@ -1,17 +1,17 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { environment } from 'src/environments/environment';
 import { Observable, Subject } from 'rxjs';
-import { map, catchError } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
+import { catchError, map } from 'rxjs/operators';
 
-import * as serviceHelper from '../../shared/helpers/service.helper';
-import { Study } from '../interfaces/study.interface';
+import * as serviceHelper from '../helpers/service.helper';
+import { Project } from '../interfaces/project.interface';
 import { MessageToast } from '../interfaces/messageToast.interface';
 
 @Injectable({
    providedIn: 'root',
 })
-export class StudiesService {
+export class ProjectsService {
    private baseUrl: string = environment.baseUrl;
 
    private toastContent = new Subject<MessageToast>();
@@ -19,52 +19,52 @@ export class StudiesService {
 
    constructor(private http: HttpClient) {}
 
-   getAll(): Observable<Study[]> {
-      return this.http.get<Study[]>(`${this.baseUrl}/studies`);
+   getAll(): Observable<Project[]> {
+      return this.http.get<Project[]>(`${this.baseUrl}/projects`);
    }
 
-   getById(id: any): Observable<Study> {
-      return this.http.get<Study>(`${this.baseUrl}/studies/${id}`);
+   getById(id: any): Observable<Project> {
+      return this.http.get<Project>(`${this.baseUrl}/projects/${id}`);
    }
 
-   save(study: Study): Observable<null> {
-      let url: string = `${this.baseUrl}/studies/${study.id}`;
-      return this.http.put<Study>(url, study).pipe(
+   save(project: Project): Observable<null> {
+      let url: string = `${this.baseUrl}/projects/${project.id}`;
+      return this.http.put<Project>(url, project).pipe(
          map(() =>
             serviceHelper.messageInfo(
                this.toastContent,
-               'Educación modificada exitosamente',
+               'Proyecto modificado exitosamente',
                't-1'
             )
          ),
          catchError((err: HttpErrorResponse) =>
-            serviceHelper.messageError(err, 'No se pudo modificar educación')
+            serviceHelper.messageError(err, 'No se pudo modificar el proyecto')
          )
       );
    }
 
-   create(Study: Study): Observable<MessageToast | null> {
-      let url: string = `${this.baseUrl}/studies`;
-      return this.http.post<Study>(url, Study).pipe(
+   create(project: Project): Observable<null> {
+      let url: string = `${this.baseUrl}/projects`;
+      return this.http.post<Project>(url, project).pipe(
          map(() =>
             serviceHelper.messageSuccess(
                this.toastContent,
-               'Estudio agregado exitosamente',
+               'Proyecto agregado exitosamente',
                't-1'
             )
          ),
          catchError((err: HttpErrorResponse) =>
-            serviceHelper.messageError(err, 'No se pudo crear el item estudio')
+            serviceHelper.messageError(err, 'No se pudo crear el proyecto')
          )
       );
    }
 
    delete(id: any): Observable<null> {
-      return this.http.delete(`${this.baseUrl}/studies/${id}`).pipe(
+      return this.http.delete(`${this.baseUrl}/projects/${id}`).pipe(
          map(() =>
             serviceHelper.messageInfo(
                this.toastContent,
-               'Se eliminó el estudio',
+               'Se eliminó el proyecto',
                't-1',
                'Borrado'
             )
@@ -72,7 +72,7 @@ export class StudiesService {
          catchError((err: HttpErrorResponse) =>
             serviceHelper.messageError(
                err,
-               'No se pudo eliminar el estudio',
+               'No se pudo eliminar el proyecto',
                't-1',
                this.toastContent
             )

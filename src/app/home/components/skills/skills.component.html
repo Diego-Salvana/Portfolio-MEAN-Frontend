@@ -11,7 +11,7 @@
       [name]="item.name"
       [skillIcon]="item.iconHTML"
       [colorIcon]="item.color || ''"
-      (onEdit)="displayModal = true"
+      (onEdit)="showModal(item)"
       (onDelete)="delete(item.id)"
     ></app-hard-skills>
   </div>
@@ -23,4 +23,7 @@
 <app-modal-form
   [displayModal]="displayModal"
   (hideModal)="displayModal = false"
+  (editSkill)="refreshSkills($event)"
 ></app-modal-form>
+
+

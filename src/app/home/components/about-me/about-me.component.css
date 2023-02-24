@@ -1,6 +1,5 @@
 #acerca {
-   border: none;
-   background: radial-gradient(#323232, 60%, transparent);
+   background: radial-gradient(#202020, #1f1f1f, #1c1c1c 75%, transparent);
 }
 
 app-edit-button {
@@ -9,14 +8,17 @@ app-edit-button {
    top: 30px;
 }
 
-p {
-   padding: 0 15vw;
-   font-size: 1.23rem;
+.text-about {
+   padding: 0 6vw;
+   font-size: 20px;
+   font-weight: 300;
    text-align: center;
+   color: var(--surface-600);
 }
 
-@media screen and (max-width: 1000px) {
-   p {
-      padding: 0 6vw;
+@media screen and (min-width: 1000px) {
+   .text-about {
+      padding: 0 15vw;
+      font-size: 21.5px;
    }
 }

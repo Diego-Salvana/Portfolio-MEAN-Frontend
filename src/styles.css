@@ -21,8 +21,8 @@ body {
 
 section {
    position: relative;
-   padding-bottom: 8rem;
-   margin-bottom: 4rem;
+   padding-bottom: 4rem;
+   margin-top: 7rem;
    border-bottom-style: solid;
    border-bottom-width: 1px;
    border-image: radial-gradient(#ccc1, 95%, transparent) 1;
@@ -30,11 +30,10 @@ section {
 }
 
 section > h2 {
-   padding-top: 2rem;
    margin-bottom: 4.5rem;
    text-align: center;
    color: #f9b627;
-   font-size: calc(1.5rem + 0.9vw);
+   font-size: calc(2.2rem + 0.3vw);
    font-weight: 400;
 }
 
@@ -119,3 +118,18 @@ section > h2 {
    }
 }
 
+.skill i,
+.form-skill-icon i {
+   font-size: inherit;
+}
+
+@media screen and (max-width: 700px) {
+   .skill i,
+   .form-skill-icon i {
+      font-size: 5rem;
+   }
+}
+
+.p-toolbar {
+   align-items: flex-end !important;
+}

@@ -4,7 +4,7 @@ import { Observable, Subject, throwError } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 
-import * as serviceHelper from '../../shared/helpers/service.helper';
+import * as serviceHelper from '../helpers/service.helper';
 import { AboutMe } from '../interfaces/about-me.interface';
 import { MessageToast } from '../interfaces/messageToast.interface';
 

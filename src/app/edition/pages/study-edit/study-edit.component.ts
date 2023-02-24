@@ -3,8 +3,8 @@ import { Router } from '@angular/router';
 
 import { MessageService } from 'primeng/api';
 
-import { StudiesService } from 'src/app/home/services/studies.service';
-import { Study } from 'src/app/home/interfaces/study.interface';
+import { StudiesService } from 'src/app/shared/services/studies.service';
+import { Study } from 'src/app/shared/interfaces/study.interface';
 
 @Component({
    selector: 'app-study-edit',

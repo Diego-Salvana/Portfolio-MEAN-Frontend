@@ -1,10 +1,10 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 
 import * as formHelper from '../../../shared/helpers/form.helper';
-import { Study } from 'src/app/home/interfaces/study.interface';
-import { ActivatedRoute } from '@angular/router';
-import { StudiesService } from 'src/app/home/services/studies.service';
+import { Study } from 'src/app/shared/interfaces/study.interface';
+import { StudiesService } from 'src/app/shared/services/studies.service';
 
 @Component({
    selector: 'app-form-study',
@@ -21,7 +21,7 @@ export class FormStudyComponent implements OnInit {
       id: [null],
       name: ['', Validators.required],
       institution: ['', Validators.required],
-      start: ['', Validators.required],
+      start: ['', [Validators.required, Validators.pattern(/^\d{1,4}$/)]],
       end: [''],
    });
 

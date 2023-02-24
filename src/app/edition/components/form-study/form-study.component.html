@@ -3,10 +3,10 @@
   <div class="field">
     <span class="p-float-label">
       <input
+        pInputText
         id="studyName"
         class="p-inputtext-lg w-12"
         type="text"
-        pInputText
         formControlName="name"
       />
       <label for="studyName">Nombre</label>
@@ -19,10 +19,10 @@
   <div class="field">
     <span class="p-float-label">
       <input
+        pInputText
         id="institution"
         class="p-inputtext-lg w-12"
         type="text"
-        pInputText
         formControlName="institution"
       />
       <label for="institution">Entidad</label>
@@ -36,18 +36,19 @@
     <div class="field">
       <span class="p-float-label">
         <input
+          pInputText
           id="studyStart"
           class="p-inputtext-lg w-12"
           type="text"
-          pInputText
           formControlName="start"
         />
         <label for="studyStart">Inicio</label>
       </span>
       <small *ngIf="invalidField('start')" class="p-error block">
-        El campo es obligatorio.
+        El campo es obligatorio y debe ser un número.
       </small>
     </div>
+
     <div class="field">
       <span class="p-float-label">
         <input
@@ -67,9 +68,9 @@
   <div class="text-center sm:text-left py-3">
     <app-button-primeng
       class="p-button-info w-11 sm:w-10rem text-lg py-2"
-      [label]="btnLabel"
       type="submit"
-      [loadingSatate]="loadingBtn"
+      [label]="btnLabel"
+      [loadingState]="loadingBtn"
     ></app-button-primeng>
   </div>
   <div class="text-center mt-5">

@@ -2,8 +2,10 @@
   <app-nav-bar></app-nav-bar>
   <app-header></app-header>
   <app-about-me></app-about-me>
-  <app-projects></app-projects>
+  <app-projects [documentScroll$]="documentScroll$"></app-projects>
   <app-skills></app-skills>
-  <app-studies></app-studies>
+  <app-studies [documentScroll$]="documentScroll$"></app-studies>
   <app-footer></app-footer>
 </div>
+
+<app-alert-confirm key="deleteAlert"></app-alert-confirm>

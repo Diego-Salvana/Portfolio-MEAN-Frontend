@@ -3,8 +3,8 @@ import { Router } from '@angular/router';
 
 import { MessageService } from 'primeng/api';
 
-import { ProjectsService } from 'src/app/home/services/projects.service';
-import { Project } from 'src/app/home/interfaces/project.interface';
+import { ProjectsService } from 'src/app/shared/services/projects.service';
+import { Project } from 'src/app/shared/interfaces/project.interface';
 
 @Component({
    selector: 'app-project-create',

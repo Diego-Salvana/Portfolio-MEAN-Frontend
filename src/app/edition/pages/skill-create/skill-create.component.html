@@ -1,6 +1,7 @@
 <div class="form-container edition-form mt-0">
   <app-form-skill
-    title="Crear Habilidad"
     btnLabel="Crear"
+    (onSave)="create($event)"
+    [loadingBtn]="loadingBtn"
   ></app-form-skill>
 </div>

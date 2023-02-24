@@ -14,9 +14,12 @@
 }
 
 .form-skill-icon {
-   height: 10rem;
-   font-size: 8rem;
-   text-align: center;
+   height: 9rem;
+   padding-top: 1rem;
+   font-size: 7rem;
+   display: flex;
+   justify-content: center;
+   align-items: center;
    overflow: hidden;
    color: cadetblue;
 }

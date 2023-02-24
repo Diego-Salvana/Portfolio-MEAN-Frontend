@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 
-import { AboutMeService } from '../../services/about-me.service';
+import { AboutMeService } from '../../../shared/services/about-me.service';
+import { AboutMe } from '../../../shared/interfaces/about-me.interface';
 
 @Component({
    selector: 'app-about-me',
@@ -8,14 +10,12 @@ import { AboutMeService } from '../../services/about-me.service';
    styleUrls: ['./about-me.component.css'],
 })
 export class AboutMeComponent implements OnInit {
-   aboutMe: string = '';
+   aboutMe!: Observable<AboutMe>;
    logged: boolean = true;
 
    constructor(private aboutSvc: AboutMeService) {}
 
    ngOnInit(): void {
-      this.aboutSvc
-         .get()
-         .subscribe(({ aboutMeText }) => (this.aboutMe = aboutMeText));
+      this.aboutMe = this.aboutSvc.get();
    }
 }

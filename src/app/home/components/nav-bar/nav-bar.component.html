@@ -1,37 +1,35 @@
 <div id="inicio" class="toolbar-container py-1">
   <p-toolbar>
-    <div class="p-toolbar-group-start">
-      <img
-        src="../../../assets/Logo_ArgentinaPrograma.png"
-        class="ap-logo"
-        alt="Argentina Programa"
-      />
-    </div>
+    <a class="p-toolbar-group-start cursor-pointer select-none" href="/">
+      <i class="pi pi-chevron-left"></i>
+      <span class="ds">ds</span>
+      <i class="pi pi-chevron-right"></i>
+    </a>
 
     <div class="p-toolbar-group-end">
-      <div class="hidden sm:block">
-        <a
-          href="https://www.linkedin.com/in/diego-salva%C3%B1%C3%A1-38b479246/"
-          target="_blank"
-          rel="noopener"
-          class="mr-3"
-        >
-          <i class="pi pi-linkedin"></i>
-        </a>
-        <a
-          href="https://github.com/Diego-Salvana"
-          target="_blank"
-          rel="noopener"
-          class="mr-3"
-        >
-          <i class="pi pi-github"></i>
-        </a>
-      </div>
-      <app-button-primeng
-        class="p-button-primary"
-        label="Iniciar Sesión"
-        (click)="goLogin()"
-      ></app-button-primeng>
+        <div class="hidden sm:block">
+          <a
+            href="https://www.linkedin.com/in/diego-salva%C3%B1%C3%A1-38b479246/"
+            target="_blank"
+            rel="noopener"
+            class="mr-3"
+          >
+            <i class="pi pi-linkedin"></i>
+          </a>
+          <a
+            href="https://github.com/Diego-Salvana"
+            target="_blank"
+            rel="noopener"
+            class="mr-3"
+          >
+            <i class="pi pi-github"></i>
+          </a>
+        </div>
+        <app-button-primeng
+          class="p-button-primary"
+          label="Iniciar Sesión"
+          (click)="goLogin()"
+        ></app-button-primeng>
     </div>
   </p-toolbar>
 </div>

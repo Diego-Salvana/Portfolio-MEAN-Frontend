@@ -5,18 +5,19 @@
 }
 
 .toolbar-container {
-   padding: 0 1vw;
+   padding: 0 2vw;
 }
 
 .p-toolbar-group-end {
    display: flex;
    align-items: center;
+   padding-bottom: 4px;
 }
 
 .p-toolbar-group-end i {
    font-size: 21px;
    color: var(--surface-300);
-   transition: all .1s ease-in;
+   transition: all 0.1s ease-in;
 }
 
 .p-toolbar-group-end i:hover {
@@ -25,7 +26,32 @@
 
 @media screen and (min-width: 1000px) {
    .toolbar-container {
-      padding-left: 10%;
-      padding-right: 10%;
+      padding-left: 12%;
+      padding-right: 12%;
    }
+}
+
+.pi-chevron-left,
+.pi-chevron-right,
+.ds {
+   background: linear-gradient( 45deg, #2c4d56, #c3aa72, #dc7612 , #bd3200 );
+   background-clip: text;
+   color: transparent;
+   /* background-size: 300% 100%; */
+   /* animation: gradient 10s ease infinite; */
+}
+
+@keyframes gradient {
+   0% { background-position: 100% 50% }
+   50% { background-position: 0% 50% }
+   100% { background-position: 100% 50% }
+}
+
+.pi-chevron-left,
+.pi-chevron-right {
+   font-size: 1.8rem;
+}
+
+.ds {
+   font-size: 2.5rem;
 }

@@ -1,7 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Observable, Subject, throwError } from 'rxjs';
 
-import { MessageToast } from 'src/app/home/interfaces/messageToast.interface';
+import { MessageToast } from 'src/app/shared/interfaces/messageToast.interface';
 
 export function messageInfo(
    obs: Subject<any>,

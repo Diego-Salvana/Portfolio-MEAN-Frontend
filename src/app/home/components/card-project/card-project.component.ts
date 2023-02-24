@@ -13,7 +13,7 @@ export class CardProjectComponent {
    @Input() description: string = '';
    @Input() linkWeb: string = '';
    @Input() linkGitHub: string = '';
-   @Input() start: string = '';
+   @Input() start: number = 0;
    @Input() end: string = '';
    @Output() onDelete: EventEmitter<null> = new EventEmitter();
 

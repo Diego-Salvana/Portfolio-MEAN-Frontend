@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Skill } from '../../interfaces/skill.interface';
-import { SkillsService } from '../../services/skills.service';
+import { ConfirmationService } from 'primeng/api';
+
+import { Skill } from '../../../shared/interfaces/skill.interface';
+import { SkillsService } from '../../../shared/services/skills.service';
 
 @Component({
    selector: 'app-skills',
@@ -12,15 +14,39 @@ export class SkillsComponent implements OnInit {
    displayModal: boolean = false;
    skills: Skill[] = [];
 
-   constructor(private skillsSvc: SkillsService) {}
+   constructor(
+      private skillsSvc: SkillsService,
+      private confirmationSvc: ConfirmationService
+   ) {}
 
    ngOnInit(): void {
-      this.skillsSvc.getSkills().subscribe((data) => {
-         this.skills = data;
+      this.skillsSvc.getAll().subscribe((data) => (this.skills = data));
+   }
+
+   showModal(skill: Skill) {
+      this.skillsSvc.setSkillEdit(skill);
+      this.displayModal = true;
+   }
+
+   refreshSkills(skill: Skill): void {
+      const { id } = skill;
+      this.skills = this.skills.map((el) => {
+         if (el.id === id) return skill;
+         else return el;
       });
    }
 
    delete(id: any): void {
-      console.log('Eliminar skill id: ', id);
+      this.confirmationSvc.confirm({
+         key: 'deleteAlert',
+         message: 'Estás por borrar una habilidad. ¿Deseas continuar?',
+         accept: () =>
+            this.skillsSvc.delete(id).subscribe({
+               next: () => {
+                  this.skills = this.skills.filter((el) => el.id !== id);
+               },
+               error: () => null,
+            }),
+      });
    }
 }

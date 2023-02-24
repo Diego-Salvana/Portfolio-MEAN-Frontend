@@ -2,8 +2,8 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 
-import { ProjectsService } from 'src/app/home/services/projects.service';
-import { Project } from 'src/app/home/interfaces/project.interface';
+import { ProjectsService } from 'src/app/shared/services/projects.service';
+import { Project } from 'src/app/shared/interfaces/project.interface';
 import * as formHelper from '../../../shared/helpers/form.helper';
 
 @Component({
