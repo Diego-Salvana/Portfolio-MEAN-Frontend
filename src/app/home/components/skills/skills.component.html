@@ -4,7 +4,7 @@
   <h2>Habilidades</h2>
 
   <div
-    class="flex flex-wrap justify-content-center row-gap-6 w-11 m-auto pb-8 mb-7"
+    class="w-11 xl:w-10 m-auto flex flex-wrap justify-content-center row-gap-8 pt-4 pb-8 mb-7"
   >
     <app-hard-skills
       *ngFor="let item of skills"
@@ -25,5 +25,3 @@
   (hideModal)="displayModal = false"
   (editSkill)="refreshSkills($event)"
 ></app-modal-form>
-
-

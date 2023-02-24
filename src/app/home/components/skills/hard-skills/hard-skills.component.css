@@ -1,5 +1,6 @@
 .skill {
    font-size: 6rem;
+   color: var(--surface-300);
    display: flex;
    justify-content: center;
 }

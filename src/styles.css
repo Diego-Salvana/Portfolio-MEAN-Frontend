@@ -121,6 +121,7 @@ section > h2 {
 .skill i,
 .form-skill-icon i {
    font-size: inherit;
+   color: inherit;
 }
 
 @media screen and (max-width: 700px) {
