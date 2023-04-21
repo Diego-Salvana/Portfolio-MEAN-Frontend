@@ -43,31 +43,31 @@
       "id": 1,
       "name": "HTML 5",
       "iconHTML": "<i class='fa-brands fa-html5'></i>",
-      "color": "orange"
+      "color": "#f06529"
     },
     {
       "id": 2,
       "name": "CSS 3",
       "iconHTML": "<i class='fa-brands fa-css3-alt'></i>",
-      "color": "deepblue"
+      "color": "#2965f1"
     },
     {
       "id": 3,
       "name": "JavaScript",
       "iconHTML": "<i class='fa-brands fa-js'></i>",
-      "color": "yellow"
+      "color": "#f0DB4F"
     },
     {
       "id": 5,
       "name": "Bootstrap",
       "iconHTML": "<i class='fa-brands fa-bootstrap'></i>",
-      "color": "blue"
+      "color": "#553C7B"
     },
     {
       "id": 6,
       "name": "Angular",
       "iconHTML": "<i class='fa-brands fa-angular'></i>",
-      "color": "red"
+      "color": "#B52E31"
     },
     {
       "id": 7,
@@ -76,22 +76,22 @@
       "color": "black"
     },
     {
+      "id": 14,
       "name": "Prime NG",
       "iconHTML": "<i class=\"pi pi-prime\"></i>",
-      "color": "rgb(221, 0, 49)",
-      "id": 14
+      "color": "rgb(221, 0, 49)"
     },
     {
       "id": 15,
       "name": "Node JS",
       "iconHTML": "<i class=\"fa-brands fa-node-js\"></i>",
-      "color": "green"
+      "color": "#3C873A"
     },
     {
       "id": 16,
       "name": "NPM",
       "iconHTML": "<i class=\"fa-brands fa-npm\"></i>",
-      "color": "red"
+      "color": "#CC3534"
     }
   ],
   "studies": [

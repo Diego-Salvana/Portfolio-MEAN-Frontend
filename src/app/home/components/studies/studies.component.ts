@@ -22,6 +22,7 @@ import { Study } from '../../../shared/interfaces/study.interface';
 export class StudiesComponent implements OnInit, AfterViewInit {
    studies: Study[] = [];
    @Input() documentScroll$!: Observable<number>;
+   @Input() isLogged$!: Observable<boolean>;
    @ViewChild('stdSection') stdSection!: ElementRef<HTMLElement>;
    @ViewChild('studiesContainer') studiesContainer!: ElementRef<HTMLElement>;
    private subscription = new Subscription();
@@ -48,14 +49,14 @@ export class StudiesComponent implements OnInit, AfterViewInit {
       });
    }
 
-   delete(id: any): void {
+   delete(id: string): void {
       this.confirmationSvc.confirm({
          key: 'deleteAlert',
          message: 'Estás por borrar un estudio. ¿Deseas continuar?',
          accept: () =>
             this.studiesSvc.delete(id).subscribe({
                next: () =>
-                  (this.studies = this.studies.filter((el) => el.id !== id)),
+                  (this.studies = this.studies.filter((el) => el._id !== id)),
                error: () => null,
             }),
       });

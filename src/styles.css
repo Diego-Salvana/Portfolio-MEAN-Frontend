@@ -17,6 +17,7 @@ body {
    font-family: var(--font-family);
    color: var(--text-color);
    scroll-behavior: smooth;
+   overflow-x: hidden;
 }
 
 section {
@@ -37,19 +38,6 @@ section > h2 {
    font-weight: 400;
 }
 
-.studies .icon-container {
-   border-right: none;
-}
-
-.studies .card-project {
-   padding-bottom: 1rem !important;
-   padding-top: 0.5rem !important;
-}
-
-.studies p {
-   margin-bottom: 0.5rem !important;
-}
-
 /* Formularios */
 .main-form {
    background-color: var(--surface-50);
@@ -67,10 +55,6 @@ section > h2 {
    margin: auto;
 }
 
-.edition-form {
-   max-width: 800px;
-}
-
 .form-title {
    font-size: 2rem;
    font-weight: 400;
@@ -80,11 +64,6 @@ section > h2 {
 
 .field {
    padding-top: 2rem;
-}
-
-.p-float-label input:focus ~ label,
-.p-float-label textarea:focus ~ label {
-   color: var(--green-400);
 }
 
 .p-float-label > .ng-invalid.ng-dirty + label {
@@ -98,7 +77,7 @@ section > h2 {
 .line-form {
    height: 2px;
    background-color: var(--green-900);
-   border-radius: 30%;
+   border-radius: 50%;
    margin: 4rem 0 2rem;
 }
 
@@ -116,21 +95,4 @@ section > h2 {
    .form-title {
       font-size: 2.5rem;
    }
-}
-
-.skill i,
-.form-skill-icon i {
-   font-size: inherit;
-   color: inherit;
-}
-
-@media screen and (max-width: 700px) {
-   .skill i,
-   .form-skill-icon i {
-      font-size: 5rem;
-   }
-}
-
-.p-toolbar {
-   align-items: flex-end !important;
 }

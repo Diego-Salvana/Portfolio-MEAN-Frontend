@@ -11,4 +11,5 @@ export class ButtonPrimengComponent {
    @Input() icon: string = '';
    @Input() class: string = '';
    @Input() loadingState: boolean = false;
+   @Input() customNgClass: any = {};
 }

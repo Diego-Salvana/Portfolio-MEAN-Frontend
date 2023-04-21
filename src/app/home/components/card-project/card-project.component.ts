@@ -1,4 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Observable } from 'rxjs';
+import { AuthService } from 'src/app/auth/services/auth.service';
 
 @Component({
    selector: 'app-card-project',
@@ -16,8 +18,9 @@ export class CardProjectComponent {
    @Input() start: number = 0;
    @Input() end: string = '';
    @Output() onDelete: EventEmitter<null> = new EventEmitter();
+   isLogged$: Observable<boolean> = this.authSvc.isLogged$;
 
-   constructor() {}
+   constructor(private authSvc: AuthService) {}
 
    deleteEmit(): void {
       this.onDelete.emit();

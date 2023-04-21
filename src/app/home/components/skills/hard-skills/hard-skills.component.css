@@ -1,12 +1,16 @@
 .skill {
-   font-size: 6rem;
    color: var(--surface-300);
    display: flex;
    justify-content: center;
 }
 
-@media screen and (max-width: 700px) {
-   .skill {
+.skill ::ng-deep i {
+   font-size: 6rem;
+   color: inherit;
+}
+
+@media screen and (max-width: 768px) {
+   .skill ::ng-deep i {
       font-size: 5rem;
    }
 }

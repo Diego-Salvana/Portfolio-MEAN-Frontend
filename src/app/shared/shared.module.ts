@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { PrimeNgModule } from '../prime-ng/prime-ng.module';
 import { ConfirmationService, MessageService } from 'primeng/api';
@@ -23,6 +24,7 @@ import { EditButtonComponent } from './components/buttons/edit-button/edit-butto
    imports: [CommonModule, PrimeNgModule],
    exports: [
       PrimeNgModule,
+      ReactiveFormsModule,
       AddButtonComponent,
       AlertConfirmComponent,
       BtnBackPortfolioComponent,

@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Component({
    selector: 'app-hard-skills',
@@ -10,6 +11,7 @@ export class HardSkillsComponent {
    @Input() name: string = '';
    @Input() skillIcon: string = '';
    @Input() colorIcon: string = '';
+   @Input() isLogged$!: Observable<boolean>;
    @Output() onEdit: EventEmitter<any> = new EventEmitter();
    @Output() onDelete: EventEmitter<any> = new EventEmitter();
 

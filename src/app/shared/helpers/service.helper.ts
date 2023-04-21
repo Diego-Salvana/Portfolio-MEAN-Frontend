@@ -1,5 +1,5 @@
 import { HttpErrorResponse } from '@angular/common/http';
-import { Observable, Subject, throwError } from 'rxjs';
+import { Subject } from 'rxjs';
 
 import { MessageToast } from 'src/app/shared/interfaces/messageToast.interface';
 
@@ -8,7 +8,7 @@ export function messageInfo(
    detail: string,
    key?: string,
    summary: string = 'Guardado'
-): null {
+): MessageToast {
    const messageToast: MessageToast = {
       key,
       severity: 'info',
@@ -16,22 +16,22 @@ export function messageInfo(
       detail,
    };
    obs.next(messageToast);
-   return null;
+   return messageToast;
 }
 
 export function messageSuccess(
    obs: Subject<any>,
    detail: string,
    key?: string
-): null {
-   let messageObj: MessageToast = {
+): MessageToast {
+   const messageToast: MessageToast = {
       key,
       severity: 'success',
       summary: 'Creado',
       detail,
    };
-   obs.next(messageObj);
-   return null;
+   obs.next(messageToast);
+   return messageToast;
 }
 
 export function messageError(
@@ -39,15 +39,15 @@ export function messageError(
    detail: string,
    key?: string,
    obs?: Subject<any>
-): Observable<never> {
-   console.warn(err);
+): MessageToast {
+   console.error(err);
    const messageToast: MessageToast = {
       key,
       severity: 'error',
-      summary: `Error ${err.status || ''}`,
+      summary: `Error`,
       detail,
    };
-   if (obs) obs.next(messageToast);
 
-   return throwError(() => messageToast);
+   if (obs) obs.next(messageToast);
+   return messageToast;
 }

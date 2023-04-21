@@ -1,22 +1,25 @@
 <section #stdSection id="formacion" class="studies-container border-none mb-0">
-  <app-add-button routerLink="/edition/create/study"></app-add-button>
+  <app-add-button
+    *ngIf="isLogged$ | async"
+    routerLink="/edition/create/study"
+  ></app-add-button>
 
   <h2>Formación</h2>
 
   <div
     #studiesContainer
-    class="w-11 lg:w-10 xl:w-8 m-auto py-4 surface-card border-round-2xl studies-div"
+    class="w-11 lg:w-10 xl:w-8 m-auto py-4 border-round-2xl studies-div"
   >
     <div *ngFor="let item of studies" class="studies">
       <app-card-project
         typeCard="study"
-        classIcon="pi pi-book text-6xl text-purple-700"
-        editLink="/edition/edit/study/{{ item.id }}"
+        classIcon="pi pi-book text-6xl text-200"
+        editLink="/edition/edit/study/{{ item._id }}"
         [name]="item.name"
         [description]="item.institution || ''"
         [start]="item.start"
         [end]="item.end || ''"
-        (onDelete)="delete(item.id)"
+        (onDelete)="delete(item._id!)"
       ></app-card-project>
     </div>
   </div>

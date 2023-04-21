@@ -18,7 +18,7 @@ export class FormProjectComponent implements OnInit {
    @Output() onSave: EventEmitter<Project> = new EventEmitter();
 
    formProject: FormGroup = this.formBuilder.group({
-      id: [null],
+      _id: null,
       name: ['', [Validators.required, Validators.maxLength(50)]],
       description: ['', [Validators.required, Validators.maxLength(250)]],
       linkWeb: [''],
@@ -37,7 +37,7 @@ export class FormProjectComponent implements OnInit {
 
          this.projectsSvc
             .getById(id)
-            .subscribe((project) => this.formProject.setValue(project));
+            .subscribe((project) => this.formProject.reset(project));
       }
    }
 

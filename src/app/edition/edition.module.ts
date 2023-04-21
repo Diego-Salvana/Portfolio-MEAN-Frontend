@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule } from '@angular/forms';
 
 import { EditionRoutingModule } from './edition-routing.module';
 import { SharedModule } from '../shared/shared.module';
@@ -35,7 +34,6 @@ import { StudyEditComponent } from './pages/study-edit/study-edit.component';
       CommonModule,
       EditionRoutingModule,
       SharedModule,
-      ReactiveFormsModule,
    ],
 })
 export class EditionModule {}

@@ -1,19 +1,25 @@
 .card-project {
    display: flex;
    justify-content: flex-start;
-   padding: 2rem 4vw;
+   padding: 2rem 5vw;
    margin: auto;
-   background-color: var(--surface-card);
+   background-color: #303030;
    border-radius: 1rem;
    max-width: 1100px;
 }
 
 .icon-container {
-   color: rgba(0,0,0,0.5)
+   color: rgba(0, 0, 0, 0.5);
 }
 
 .float {
    float: right;
+}
+
+@media screen and (min-width: 768px) {
+   .card-project {
+      padding: 2rem 4vw;
+   }
 }
 
 @media screen and (min-width: 900px) {

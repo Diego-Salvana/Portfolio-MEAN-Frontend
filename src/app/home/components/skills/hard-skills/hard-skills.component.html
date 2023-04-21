@@ -3,7 +3,7 @@
   (mouseover)="mouseOver = true"
   (mouseleave)="mouseOver = false"
 >
-  <div *ngIf="false" class="flex justify-content-center pb-3">
+  <div *ngIf="isLogged$ | async" class="flex justify-content-center pb-3">
     <app-edit-button (click)="editEmit()"></app-edit-button>
     <app-delete-button (click)="deleteEmit()"></app-delete-button>
   </div>
@@ -12,8 +12,7 @@
     class="transition-all transition-duration-400 transition-ease-in skill"
     [innerHTML]="skillIcon"
     [ngStyle]="{ color: mouseOver ? colorIcon : '' }"
-  >
-  </div>
+  ></div>
 
   <h6 class="text-center py-2 text-xl text-400 font-normal">{{ name }}</h6>
 </div>

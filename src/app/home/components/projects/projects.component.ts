@@ -23,9 +23,11 @@ import { Project } from '../../../shared/interfaces/project.interface';
 export class ProjectsComponent implements OnInit, AfterViewInit {
    projects: Project[] = [];
    @Input() documentScroll$!: Observable<number>;
+   @Input() isLogged$!: Observable<boolean>;
    @ViewChild('projectSection') projectSection!: ElementRef<HTMLElement>;
-   @ViewChildren('projectCard')
-   projectCard!: QueryList<ElementRef<HTMLElement>>;
+   @ViewChildren('projectCard') projectCard!: QueryList<
+      ElementRef<HTMLElement>
+   >;
    private subscription = new Subscription();
 
    constructor(
@@ -49,21 +51,23 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
             if (scroll > initAnimate + nativeElement.offsetTop) {
                this.renderer2.addClass(nativeElement, 'animate');
                const lastHasAnimate: boolean =
-                  this.projectCard.last.nativeElement.classList.contains('animate');
+                  this.projectCard.last.nativeElement.classList.contains(
+                     'animate'
+                  );
                if (lastHasAnimate) this.subscription.unsubscribe();
             }
          });
       });
    }
 
-   delete(id: any): void {
+   delete(id: string): void {
       this.confirmationSvc.confirm({
          key: 'deleteAlert',
          message: 'Estás por borrar un proyecto. ¿Deseas continuar?',
          accept: () =>
             this.projectsSvc.delete(id).subscribe({
                next: () =>
-                  (this.projects = this.projects.filter((el) => el.id !== id)),
+                  (this.projects = this.projects.filter((el) => el._id !== id)),
                error: () => null,
             }),
       });

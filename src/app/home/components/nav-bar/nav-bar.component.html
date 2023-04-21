@@ -7,29 +7,33 @@
     </a>
 
     <div class="p-toolbar-group-end">
-        <div class="hidden sm:block">
-          <a
-            href="https://www.linkedin.com/in/diego-salva%C3%B1%C3%A1-38b479246/"
-            target="_blank"
-            rel="noopener"
-            class="mr-3"
-          >
-            <i class="pi pi-linkedin"></i>
-          </a>
-          <a
-            href="https://github.com/Diego-Salvana"
-            target="_blank"
-            rel="noopener"
-            class="mr-3"
-          >
-            <i class="pi pi-github"></i>
-          </a>
-        </div>
+      <div class="hidden sm:block">
+        <a
+          href="https://www.linkedin.com/in/diego-salva%C3%B1%C3%A1-38b479246/"
+          target="_blank"
+          rel="noopener"
+          class="mr-3"
+        >
+          <i class="pi pi-linkedin"></i>
+        </a>
+        <a
+          href="https://github.com/Diego-Salvana"
+          target="_blank"
+          rel="noopener"
+          class="mr-3"
+        >
+          <i class="pi pi-github"></i>
+        </a>
+      </div>
+
+      <div #loginBtnRef>
         <app-button-primeng
-          class="p-button-primary"
-          label="Iniciar Sesión"
+          class="navBtn"
+          [label]="labelBtn"
           (click)="goLogin()"
+          [customNgClass]="{ 'p-button-outlined': isLogged }"
         ></app-button-primeng>
+      </div>
     </div>
   </p-toolbar>
 </div>

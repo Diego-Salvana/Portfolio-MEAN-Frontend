@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 import { ConfirmationService } from 'primeng/api';
+import { Observable } from 'rxjs';
 
 import { Skill } from '../../../shared/interfaces/skill.interface';
 import { SkillsService } from '../../../shared/services/skills.service';
@@ -13,6 +14,8 @@ import { SkillsService } from '../../../shared/services/skills.service';
 export class SkillsComponent implements OnInit {
    displayModal: boolean = false;
    skills: Skill[] = [];
+   @Input() isLogged$!: Observable<boolean>;
+   @Output() modalEmit: EventEmitter<boolean> = new EventEmitter();
 
    constructor(
       private skillsSvc: SkillsService,
@@ -26,24 +29,30 @@ export class SkillsComponent implements OnInit {
    showModal(skill: Skill) {
       this.skillsSvc.setSkillEdit(skill);
       this.displayModal = true;
+      this.modalEmit.emit(this.displayModal);
+   }
+
+   hideModal() {
+      this.displayModal = false;
+      this.modalEmit.emit(this.displayModal);
    }
 
    refreshSkills(skill: Skill): void {
-      const { id } = skill;
+      const { _id } = skill;
       this.skills = this.skills.map((el) => {
-         if (el.id === id) return skill;
+         if (el._id === _id) return skill;
          else return el;
       });
    }
 
-   delete(id: any): void {
+   delete(id: string): void {
       this.confirmationSvc.confirm({
          key: 'deleteAlert',
          message: 'Estás por borrar una habilidad. ¿Deseas continuar?',
          accept: () =>
             this.skillsSvc.delete(id).subscribe({
                next: () => {
-                  this.skills = this.skills.filter((el) => el.id !== id);
+                  this.skills = this.skills.filter((el) => el._id !== id);
                },
                error: () => null,
             }),

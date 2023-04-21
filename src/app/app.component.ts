@@ -7,6 +7,7 @@ import { AboutMeService } from './shared/services/about-me.service';
 import { ProjectsService } from './shared/services/projects.service';
 import { SkillsService } from './shared/services/skills.service';
 import { StudiesService } from './shared/services/studies.service';
+import { AuthService } from './auth/services/auth.service';
 
 @Component({
    selector: 'app-root',
@@ -20,11 +21,14 @@ export class AppComponent implements OnInit, AfterViewInit {
       private messageSvc: MessageService,
       private aboutMeSvc: AboutMeService,
       private studiesSvc: StudiesService,
-      private skillsSvc: SkillsService
+      private skillsSvc: SkillsService,
+      private authSvc: AuthService
    ) {}
 
    ngOnInit() {
       this.primengConfig.ripple = true;
+
+      this.authSvc.verifyToken().subscribe();
    }
 
    ngAfterViewInit(): void {

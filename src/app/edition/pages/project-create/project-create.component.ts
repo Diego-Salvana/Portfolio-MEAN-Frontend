@@ -28,6 +28,7 @@ export class ProjectCreateComponent {
             this.router.navigateByUrl('/');
          },
          error: (messageObj) => {
+            console.log(messageObj)
             this.loadingBtn = false;
             this.messageSvc.add(messageObj);
          },

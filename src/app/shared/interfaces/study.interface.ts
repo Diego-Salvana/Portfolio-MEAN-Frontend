@@ -1,5 +1,5 @@
 export interface Study {
-   id:           any;
+   _id?:         string;
    name:         string;
    institution?: string;
    start:        number;

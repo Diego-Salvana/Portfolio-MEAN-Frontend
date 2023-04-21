@@ -18,10 +18,10 @@ export class FormStudyComponent implements OnInit {
    @Output() onSave: EventEmitter<Study> = new EventEmitter();
 
    formStudy: FormGroup = this.formBuilder.group({
-      id: [null],
+      _id: null,
       name: ['', Validators.required],
       institution: ['', Validators.required],
-      start: ['', [Validators.required, Validators.pattern(/^\d{1,4}$/)]],
+      start: ['', [Validators.required, Validators.pattern(/^\d{4}$/)]],
       end: [''],
    });
 
@@ -37,7 +37,7 @@ export class FormStudyComponent implements OnInit {
 
          this.studySvc
             .getById(id)
-            .subscribe((study) => this.formStudy.setValue(study));
+            .subscribe((study) => this.formStudy.reset(study));
       }
    }
 

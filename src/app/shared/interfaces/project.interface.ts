@@ -1,7 +1,7 @@
 export interface Project {
-   id:           any;
+   _id?:         string;
    name:         string;
    description:  string;
    linkWeb?:     string;
-   linkGitHub?:  string;
+   linkGitHub:   string;
 }

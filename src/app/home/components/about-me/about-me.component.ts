@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import { AboutMeService } from '../../../shared/services/about-me.service';
@@ -11,7 +11,7 @@ import { AboutMe } from '../../../shared/interfaces/about-me.interface';
 })
 export class AboutMeComponent implements OnInit {
    aboutMe!: Observable<AboutMe>;
-   logged: boolean = true;
+   @Input() isLogged$!: Observable<boolean>;
 
    constructor(private aboutSvc: AboutMeService) {}
 

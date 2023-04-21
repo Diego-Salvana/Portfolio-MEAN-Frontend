@@ -1,25 +1,19 @@
-.p-float-label textarea:focus ~ label,
-.p-float-label input:focus ~ label {
-   color: var(--blue-300);
-}
-
-.p-inputtext:enabled:hover,
-.p-inputtext:enabled:focus {
-   border-color: #4fc3f7;
-}
-
-.line-form {
-   background-color: var(--blue-600);
-   border-radius: 50%;
-}
-
 .form-skill-icon {
    height: 9rem;
    padding-top: 1rem;
-   font-size: 7rem;
    display: flex;
    justify-content: center;
    align-items: center;
    overflow: hidden;
+}
+
+.form-skill-icon ::ng-deep i {
+   font-size: 7rem;
    color: cadetblue;
+}
+
+@media screen and (max-width: 768px) {
+   .form-skill-icon ::ng-deep i {
+      font-size: 5rem;
+   }
 }

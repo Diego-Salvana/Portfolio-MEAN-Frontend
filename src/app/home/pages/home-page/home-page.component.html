@@ -1,10 +1,11 @@
+<app-spinner [availableSpinner]="availableSpinner"></app-spinner>
 <div>
-  <app-nav-bar></app-nav-bar>
-  <app-header></app-header>
-  <app-about-me></app-about-me>
-  <app-projects [documentScroll$]="documentScroll$"></app-projects>
-  <app-skills></app-skills>
-  <app-studies [documentScroll$]="documentScroll$"></app-studies>
+  <app-nav-bar [isLogged$]="isLogged$"></app-nav-bar>
+  <app-header [isLogged$]="isLogged$"></app-header>
+  <app-about-me [isLogged$]="isLogged$"></app-about-me>
+  <app-projects [isLogged$]="isLogged$" [documentScroll$]="documentScroll$"></app-projects>
+  <app-skills [isLogged$]="isLogged$" (modalEmit)="changeAvailableSpinner($event)"></app-skills>
+  <app-studies [isLogged$]="isLogged$" [documentScroll$]="documentScroll$"></app-studies>
   <app-footer></app-footer>
 </div>
 

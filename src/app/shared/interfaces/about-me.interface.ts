@@ -1,5 +1,6 @@
 export interface AboutMe {
-   name?:        string;
-   lastName?:    string;
-   aboutMeText:  string;
+   _id?:                string;
+   name?:              string;
+   lastName?:          string;
+   aboutMeText:        string;
 }

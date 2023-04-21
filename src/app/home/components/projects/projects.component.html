@@ -1,5 +1,8 @@
 <section id="proyectos" #projectSection>
-  <app-add-button routerLink="/edition/create/project"></app-add-button>
+  <app-add-button
+    *ngIf="isLogged$ | async"
+    routerLink="/edition/create/project"
+  ></app-add-button>
 
   <h2>Proyectos</h2>
 
@@ -8,12 +11,12 @@
       <app-card-project
         typeCard="project"
         classIcon="pi pi-wrench text-7xl"
-        editLink="/edition/edit/project/{{ item.id }}"
+        editLink="/edition/edit/project/{{ item._id }}"
         [name]="item.name"
         [description]="item.description"
         [linkWeb]="item.linkWeb || ''"
         [linkGitHub]="item.linkGitHub || ''"
-        (onDelete)="delete(item.id)"
+        (onDelete)="delete(item._id!)"
       ></app-card-project>
     </div>
   </div>

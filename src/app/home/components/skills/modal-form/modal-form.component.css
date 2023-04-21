@@ -12,6 +12,10 @@
    color: cadetblue;
 }
 
+.form-skill-icon ::ng-deep i {
+   font-size: inherit;
+}
+
 .p-float-label textarea:focus ~ label,
 .p-float-label input:focus ~ label {
    color: var(--blue-300);

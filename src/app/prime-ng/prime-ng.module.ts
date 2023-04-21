@@ -9,11 +9,13 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
 import { InputTextModule } from 'primeng/inputtext';
 import { PasswordModule } from 'primeng/password';
 import { ProgressBarModule } from 'primeng/progressbar';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { RippleModule } from 'primeng/ripple';
+import { ScrollTopModule } from 'primeng/scrolltop';
+import { SkeletonModule } from 'primeng/skeleton';
 import { ToastModule } from 'primeng/toast';
 import { ToolbarModule } from 'primeng/toolbar';
 import { TooltipModule } from 'primeng/tooltip';
-import { AnimateModule } from 'primeng/animate';
 
 @NgModule({
    exports: [
@@ -26,7 +28,10 @@ import { AnimateModule } from 'primeng/animate';
       InputTextModule,
       PasswordModule,
       ProgressBarModule,
+      ProgressSpinnerModule,
       RippleModule,
+      ScrollTopModule,
+      SkeletonModule,
       ToastModule,
       ToolbarModule,
       TooltipModule,

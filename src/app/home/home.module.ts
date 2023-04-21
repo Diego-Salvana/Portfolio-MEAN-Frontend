@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { ReactiveFormsModule } from '@angular/forms';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { SharedModule } from '../shared/shared.module';
+import { SpinnerInterceptor } from './interceptors/spinner.interceptor';
 
 import { AboutMeComponent } from './components/about-me/about-me.component';
 import { CardProjectComponent } from './components/card-project/card-project.component';
@@ -17,6 +18,7 @@ import { SkillsComponent } from './components/skills/skills.component';
 import { SoftSkillsComponent } from './components/skills/soft-skills/soft-skills.component';
 import { StudiesComponent } from './components/studies/studies.component';
 import { ModalFormComponent } from './components/skills/modal-form/modal-form.component';
+import { SpinnerComponent } from './components/spinner/spinner.component';
 
 @NgModule({
    declarations: [
@@ -32,8 +34,12 @@ import { ModalFormComponent } from './components/skills/modal-form/modal-form.co
       SoftSkillsComponent,
       StudiesComponent,
       ModalFormComponent,
+      SpinnerComponent,
    ],
-   imports: [CommonModule, RouterModule, ReactiveFormsModule, SharedModule],
+   imports: [CommonModule, RouterModule, SharedModule],
+   providers: [
+      { provide: HTTP_INTERCEPTORS, useClass: SpinnerInterceptor, multi: true },
+   ],
    exports: [HomePageComponent],
 })
 export class HomeModule {}

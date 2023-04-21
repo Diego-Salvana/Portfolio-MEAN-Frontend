@@ -15,14 +15,16 @@ export class FormAboutMeComponent implements OnInit {
    @Input() loadingBtn: boolean = false;
 
    formAboutMe: FormGroup = new FormGroup({
+      _id: new FormControl(''),
       aboutMeText: new FormControl('', [Validators.required]),
    });
 
    constructor(private aboutMeSvc: AboutMeService) {}
 
    ngOnInit(): void {
-      this.aboutMeSvc.get().subscribe(({ aboutMeText }) => {
-         this.formAboutMe.setValue({ aboutMeText });
+      this.aboutMeSvc.get().subscribe((data) => {
+         const { _id, aboutMeText } = data;
+         this.formAboutMe.setValue({ _id, aboutMeText });
       });
    }
 

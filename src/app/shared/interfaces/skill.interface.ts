@@ -1,5 +1,5 @@
 export interface Skill {
-   id:         any;
+   _id?:       string;
    name:       string;
    iconHTML:   string;
    color?:     string;

@@ -29,7 +29,7 @@ export class ModalFormComponent implements OnInit, OnDestroy {
    icon: string = "<i class='pi pi-minus'></i>";
 
    formSkill: FormGroup = this.formBuilder.group({
-      id: [null],
+      _id: null,
       name: ['', Validators.required],
       iconHTML: ['', Validators.required],
       color: ['', Validators.required],
@@ -65,8 +65,8 @@ export class ModalFormComponent implements OnInit, OnDestroy {
          formHelper.markAllAsDirty(this.formSkill);
          return;
       }
-      this.loadingBtn = true;
 
+      this.loadingBtn = true;
       const skill: Skill = this.formSkill.value;
       this.skillsSvc.save(skill).subscribe({
          next: () => {

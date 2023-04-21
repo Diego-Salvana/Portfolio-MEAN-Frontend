@@ -1,5 +1,8 @@
 <section id="habilidades">
-  <app-add-button routerLink="/edition/create/skill"></app-add-button>
+  <app-add-button
+    *ngIf="isLogged$ | async"
+    routerLink="/edition/create/skill"
+  ></app-add-button>
 
   <h2>Habilidades</h2>
 
@@ -12,7 +15,8 @@
       [skillIcon]="item.iconHTML"
       [colorIcon]="item.color || ''"
       (onEdit)="showModal(item)"
-      (onDelete)="delete(item.id)"
+      (onDelete)="delete(item._id!)"
+      [isLogged$]="isLogged$"
     ></app-hard-skills>
   </div>
 
@@ -22,6 +26,6 @@
 <!-- MODAL -->
 <app-modal-form
   [displayModal]="displayModal"
-  (hideModal)="displayModal = false"
+  (hideModal)="hideModal()"
   (editSkill)="refreshSkills($event)"
 ></app-modal-form>

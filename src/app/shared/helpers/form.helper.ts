@@ -4,6 +4,7 @@ import { FormGroup } from '@angular/forms';
 export function submitForm(form: FormGroup, emitter: EventEmitter<any>): void {
    if (form.invalid) {
       markAllAsDirty(form);
+      form.markAllAsTouched();
       return;
    }
 
@@ -11,7 +12,7 @@ export function submitForm(form: FormGroup, emitter: EventEmitter<any>): void {
 }
 
 export function invalidField(form: FormGroup, field: string): boolean {
-   return form.controls[field].invalid && form.controls[field].dirty;
+   return form.controls[field].invalid && form.controls[field].touched && form.controls[field].dirty;
 }
 
 export function markAllAsDirty(form: FormGroup) {

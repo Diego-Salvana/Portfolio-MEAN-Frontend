@@ -1,1 +1,17 @@
+.main-form ::ng-deep .edition-form {
+   max-width: 800px;
+}
 
+.main-form ::ng-deep .p-float-label textarea:focus ~ label,
+.main-form ::ng-deep .p-float-label input:focus ~ label {
+   color: var(--blue-300);
+}
+
+.main-form ::ng-deep .p-inputtext:enabled:hover,
+.main-form ::ng-deep .p-inputtext:enabled:focus {
+   border-color: #4fc3f7;
+}
+
+.main-form ::ng-deep .line-form {
+   background-color: var(--blue-600);
+}

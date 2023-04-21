@@ -2,11 +2,15 @@
   <div class="bg"></div>
   <div class="perfil__foto">
     <div class="img-container">
-      <!-- <div class="loader-out" [ngClass]="{ loader: spinner }"></div> -->
-      <img src="../../../../assets/fotoPerfil.jpg" />
+      <img [src]="profilePicture" *ngIf="!isLoading; else skeleton" />
+      <ng-template #skeleton>
+        <div style="width: 100%; height: 100%; background-color: #222">
+          <p-skeleton shape="circle" width="100%" height="100%"></p-skeleton>
+        </div>
+      </ng-template>
     </div>
 
-    <div *ngIf="logged" class="input-container">
+    <div *ngIf="isLogged$ | async" class="input-container">
       <label
         pButton
         pRipple
@@ -19,12 +23,13 @@
         accept=".png, .jpg, .jpeg"
         id="fileInput"
         class="hidden"
+        (change)="updateProfilePicture($event)"
       />
     </div>
   </div>
 
   <div
-    [ngStyle]="{ 'padding-bottom': logged ? '32px' : 0 }"
+    [ngStyle]="{ 'padding-bottom': (isLogged$ | async) ? '32px' : 0 }"
     class="perfil__text hidden sm:block"
   >
     <h3 class="mb-3 text-bg">Hola!, soy</h3>
@@ -32,3 +37,9 @@
     <h4 class="text-bg">- Front End Developer -</h4>
   </div>
 </header>
+
+<p-toast
+  [breakpoints]="{ '500px': { width: '100%', right: '0', left: '0' } }"
+  position="bottom-right"
+  key="img-profile"
+></p-toast>

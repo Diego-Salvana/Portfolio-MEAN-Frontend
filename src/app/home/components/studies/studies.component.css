@@ -5,12 +5,26 @@
 
 .studies {
    margin: auto;
-   background-color: var(--surface-card);
+   background-color: #303030;
    border-radius: 1rem;
+}
+
+.studies ::ng-deep .icon-container {
+   border-right: none;
+}
+
+.studies ::ng-deep .card-project {
+   padding-bottom: 1rem;
+   padding-top: 0.5rem;
+}
+
+.studies ::ng-deep p {
+   margin-bottom: 0.5rem !important;
 }
 
 .studies-div {
    opacity: 0;
+   background-color: #303030;
    transition: opacity 0.5s ease-in;
 }
 

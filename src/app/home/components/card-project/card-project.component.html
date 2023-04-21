@@ -5,7 +5,7 @@
     <i [class]="classIcon"></i>
   </div>
   <div class="md:pl-5 w-12">
-    <div *ngIf="false" class="float">
+    <div *ngIf="isLogged$ | async" class="float">
       <app-edit-button [routerLink]="editLink"></app-edit-button>
       <app-delete-button (click)="deleteEmit()"></app-delete-button>
     </div>
@@ -17,12 +17,12 @@
       {{ name }}
     </h3>
 
-    <p class="text-xl mb-4 text-500">{{ description }}</p>
+    <p class="text-lg md:text-xl mb-4 text-500">{{ description }}</p>
 
     <div *ngIf="typeCard === 'project'">
       <a *ngIf="linkWeb" [href]="linkWeb" target="_blank" rel="noopener">
         <app-button-primeng
-          class="p-button-raised p-button-success p-button-text p-button-rounded text-green-400 mr-2"
+          class="p-button-text p-button-rounded text-green-500 mr-2"
           label="Web"
           icon="pi pi-globe"
         ></app-button-primeng>
@@ -30,7 +30,7 @@
 
       <a *ngIf="linkGitHub" [href]="linkGitHub" target="_blank" rel="noopener">
         <app-button-primeng
-          class="p-button-raised p-button-text p-button-rounded text-indigo-300"
+          class="p-button-text p-button-rounded text-yellow-500"
           label="Git-Hub"
           icon="pi pi-github"
         ></app-button-primeng>
