@@ -11,11 +11,11 @@ export function submitForm(form: FormGroup, emitter: EventEmitter<any>): void {
    emitter.emit(form.value);
 }
 
-export function invalidField(form: FormGroup, field: string): boolean {
-   return form.controls[field].invalid && form.controls[field].touched && form.controls[field].dirty;
-}
-
-export function markAllAsDirty(form: FormGroup) {
+export function markAllAsDirty(form: FormGroup): void {
    const formControls = form.controls;
    for (let field in formControls) formControls[field].markAsDirty();
+}
+
+export function invalidField(form: FormGroup, field: string): boolean {
+   return form.controls[field].invalid && form.controls[field].touched;
 }

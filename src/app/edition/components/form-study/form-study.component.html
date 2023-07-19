@@ -8,10 +8,11 @@
         class="p-inputtext-lg w-12"
         type="text"
         formControlName="name"
+        (blur)="onBlurEvent($event)"
       />
       <label for="studyName">Nombre</label>
     </span>
-    <small *ngIf="invalidField('name')" class="p-error block">
+    <small *ngIf="isInvalidField('name')" class="p-error block">
       El campo es obligatorio. Máximo 50 caracteres.
     </small>
   </div>
@@ -24,10 +25,11 @@
         class="p-inputtext-lg w-12"
         type="text"
         formControlName="institution"
+        (blur)="onBlurEvent($event)"
       />
       <label for="institution">Entidad</label>
     </span>
-    <small *ngIf="invalidField('institution')" class="p-error block">
+    <small *ngIf="isInvalidField('institution')" class="p-error block">
       El campo es obligatorio.
     </small>
   </div>
@@ -41,21 +43,22 @@
           class="p-inputtext-lg w-12"
           type="text"
           formControlName="start"
+          (blur)="onBlurEvent($event)"
         />
         <label for="studyStart">Inicio</label>
       </span>
-      <small *ngIf="invalidField('start')" class="p-error block">
-        El campo es obligatorio y debe ser un número. (aaaa)
+      <small *ngIf="isInvalidField('start')" class="p-error block">
+        El campo es obligatorio y debe ser un número. [ aaaa ]
       </small>
     </div>
 
     <div class="field">
       <span class="p-float-label">
         <input
+          pInputText
           id="studyEnd"
           class="p-inputtext-lg w-12"
           type="text"
-          pInputText
           formControlName="end"
         />
         <label for="studyEnd">Fin</label>

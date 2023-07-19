@@ -66,14 +66,6 @@ section > h2 {
    padding-top: 2rem;
 }
 
-.p-float-label > .ng-invalid.ng-dirty + label {
-   color: #e57373 !important;
-}
-
-.p-float-label > .ng-invalid.ng-dirty {
-   border-color: #e57373 !important;
-}
-
 .line-form {
    height: 2px;
    background-color: var(--green-900);

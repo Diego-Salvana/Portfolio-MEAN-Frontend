@@ -3,16 +3,17 @@
   <div class="field">
     <span class="p-float-label">
       <textarea
-        id="text-area"
-        [rows]="8"
         pInputTextarea
-        [autoResize]="true"
+        id="text-area"
         class="w-12 text-lg"
+        [rows]="8"
+        [autoResize]="true"
         formControlName="aboutMeText"
+        (blur)="onBlurEvent($event)"
       ></textarea>
       <label for="text-area">Acerca de mí</label>
     </span>
-    <small *ngIf="invalidField('aboutMeText')" class="p-error block">
+    <small *ngIf="isInvalidField('aboutMeText')" class="p-error block">
       El campo es obligatorio.
     </small>
   </div>

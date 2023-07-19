@@ -2,14 +2,22 @@
    max-width: 800px;
 }
 
-.main-form ::ng-deep .p-float-label textarea:focus ~ label,
-.main-form ::ng-deep .p-float-label input:focus ~ label {
+.main-form ::ng-deep .p-inputtext:focus ~ label {
    color: var(--blue-300);
 }
 
-.main-form ::ng-deep .p-inputtext:enabled:hover,
-.main-form ::ng-deep .p-inputtext:enabled:focus {
+.main-form ::ng-deep .p-inputtext:focus.ng-invalid.ng-dirty ~ label {
+   color: #e57373;
+}
+
+.main-form ::ng-deep .p-inputtext:hover,
+.main-form ::ng-deep .p-inputtext:focus {
    border-color: #4fc3f7;
+}
+
+.main-form ::ng-deep .p-inputtext:hover.ng-invalid.ng-dirty,
+.main-form ::ng-deep .p-inputtext:focus.ng-invalid.ng-dirty {
+   border-color: #e57373;
 }
 
 .main-form ::ng-deep .line-form {

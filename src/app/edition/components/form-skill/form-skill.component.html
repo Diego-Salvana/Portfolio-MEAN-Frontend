@@ -1,18 +1,22 @@
 <form [formGroup]="formSkill" (ngSubmit)="onSaveEmit()" autocomplete="off">
   <h2 class="form-title pb-0">Nueva Habilidad</h2>
-  <div class="form-skill-icon" [innerHTML]="formSkill.value.iconHTML || icon"></div>
+  <div
+    class="form-skill-icon"
+    [innerHTML]="formSkill.value.iconHTML || icon"
+  ></div>
   <div class="field">
     <span class="p-float-label">
       <input
+        pInputText
         id="skillName"
         class="p-inputtext-lg w-12"
         type="text"
-        pInputText
         formControlName="name"
+        (blur)="onBlurEvent($event)"
       />
       <label for="skillName">Nombre</label>
     </span>
-    <small *ngIf="invalidField('name')" class="p-error block">
+    <small *ngIf="isInvalidField('name')" class="p-error block">
       El campo es obligatorio.
     </small>
   </div>
@@ -20,16 +24,17 @@
   <div class="field">
     <span class="p-float-label">
       <textarea
-        id="skillIcon"
-        [rows]="3"
         pInputTextarea
-        [autoResize]="true"
+        id="skillIcon"
         class="w-12 text-lg"
+        [rows]="3"
+        [autoResize]="true"
         formControlName="iconHTML"
+        (blur)="onBlurEvent($event)"
       ></textarea>
       <label for="skillIcon">Ícono (HTML)</label>
     </span>
-    <small *ngIf="invalidField('iconHTML')" class="p-error block">
+    <small *ngIf="isInvalidField('iconHTML')" class="p-error block">
       El campo es obligatorio.
     </small>
   </div>
@@ -37,15 +42,16 @@
   <div class="field">
     <span class="p-float-label">
       <input
-        id="color"
+        pInputText
+        id="skillColor"
         class="p-inputtext-lg w-12"
         type="text"
-        pInputText
         formControlName="color"
+        (blur)="onBlurEvent($event)"
       />
-      <label for="color">Color</label>
+      <label for="skillColor">Color</label>
     </span>
-    <small *ngIf="invalidField('color')" class="p-error block">
+    <small *ngIf="isInvalidField('color')" class="p-error block">
       El campo es obligatorio.
     </small>
   </div>

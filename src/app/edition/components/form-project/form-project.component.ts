@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, Renderer2 } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 
@@ -16,7 +16,6 @@ export class FormProjectComponent implements OnInit {
    @Input() btnLabel: string = '';
    @Input() loadingBtn: boolean = false;
    @Output() onSave: EventEmitter<Project> = new EventEmitter();
-
    formProject: FormGroup = this.formBuilder.group({
       _id: null,
       name: ['', [Validators.required, Validators.maxLength(50)]],
@@ -28,7 +27,8 @@ export class FormProjectComponent implements OnInit {
    constructor(
       private formBuilder: FormBuilder,
       private activatedRoute: ActivatedRoute,
-      private projectsSvc: ProjectsService
+      private projectsSvc: ProjectsService,
+      private renderer2: Renderer2
    ) {}
 
    ngOnInit(): void {
@@ -45,7 +45,12 @@ export class FormProjectComponent implements OnInit {
       formHelper.submitForm(this.formProject, this.onSave);
    }
 
-   invalidField(field: string): boolean {
+   isInvalidField(field: string): boolean {
       return formHelper.invalidField(this.formProject, field);
+   }
+
+   onBlurEvent(event: FocusEvent): void {
+      const inputElement = event.target;
+      this.renderer2.addClass(inputElement, 'ng-dirty');
    }
 }

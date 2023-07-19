@@ -14,7 +14,6 @@ export class HomeGuard implements CanActivate {
       route: ActivatedRouteSnapshot,
       state: RouterStateSnapshot
    ): Observable<boolean> | Promise<boolean> | boolean {
-      //verificar jwt
       if (localStorage.getItem('session')) {
          console.log('home guard');
          this.authSvc.setIsLogged(true);

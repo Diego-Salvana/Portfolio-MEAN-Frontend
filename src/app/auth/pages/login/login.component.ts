@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Renderer2 } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
@@ -22,8 +22,9 @@ export class LoginComponent {
       private router: Router,
       private formBuilder: FormBuilder,
       private authSvc: AuthService,
-      private messageSvc: MessageService
-   ){}
+      private messageSvc: MessageService,
+      private renderer2: Renderer2
+   ) {}
 
    logIn(): void {
       if (this.loginForm.invalid) {
@@ -47,7 +48,12 @@ export class LoginComponent {
       });
    }
 
-   invalidField(field: string): boolean {
+   isInvalidField(field: string): boolean {
       return formHelper.invalidField(this.loginForm, field);
+   }
+
+   onBlurEvent(event: FocusEvent): void {
+      const inputElement = event.target;
+      this.renderer2.addClass(inputElement, 'ng-dirty');
    }
 }

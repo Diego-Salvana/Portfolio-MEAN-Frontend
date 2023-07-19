@@ -3,15 +3,16 @@
   <div class="field">
     <span class="p-float-label">
       <input
+        pInputText
         id="projectName"
         class="p-inputtext-lg w-12"
         type="text"
-        pInputText
         formControlName="name"
+        (blur)="onBlurEvent($event)"
       />
       <label for="projectName">Nombre</label>
     </span>
-    <small *ngIf="invalidField('name')" class="p-error block">
+    <small *ngIf="isInvalidField('name')" class="p-error block">
       El campo es obligatorio. Máximo 50 caracteres.
     </small>
   </div>
@@ -19,15 +20,16 @@
   <div class="field">
     <span class="p-float-label">
       <textarea
-        id="projectDescription"
-        [rows]="5"
         pInputTextarea
-        [autoResize]="true"
+        id="projectDescription"
         class="w-12 text-lg"
+        [rows]="5"
+        [autoResize]="true"
         formControlName="description"
+        (blur)="onBlurEvent($event)"
       ></textarea>
       <label for="projectDescription">Descripción</label>
-      <small *ngIf="invalidField('description')" class="p-error block">
+      <small *ngIf="isInvalidField('description')" class="p-error block">
         El campo es obligatorio. Máximo 250 caracteres.
       </small>
     </span>
@@ -36,10 +38,10 @@
   <div class="field">
     <span class="p-float-label">
       <input
+        pInputText
         id="linkWeb"
         class="p-inputtext-lg w-12"
         type="text"
-        pInputText
         formControlName="linkWeb"
       />
       <label for="linkWeb">Link Web</label>
@@ -49,15 +51,16 @@
   <div class="field">
     <span class="p-float-label">
       <input
+        pInputText
         id="linkGitHub"
         class="p-inputtext-lg w-12"
         type="text"
-        pInputText
         formControlName="linkGitHub"
+        (blur)="onBlurEvent($event)"
       />
       <label for="linkGitHub">Link Git-Hub</label>
     </span>
-    <small *ngIf="invalidField('linkGitHub')" class="p-error block">
+    <small *ngIf="isInvalidField('linkGitHub')" class="p-error block">
       El campo es obligatorio.
     </small>
   </div>

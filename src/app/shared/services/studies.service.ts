@@ -21,9 +21,9 @@ export class StudiesService {
    constructor(private http: HttpClient) {}
 
    getAll(): Observable<Study[]> {
-      return this.http.get<Study[]>(`${this.baseUrl}/studies`).pipe(
-         tap((data) => data.sort(this.orderStudies))
-      );
+      return this.http
+         .get<Study[]>(`${this.baseUrl}/studies`)
+         .pipe(tap((data) => data.sort(this.orderStudies)));
    }
 
    getById(id: string): Observable<Study> {
@@ -102,34 +102,28 @@ export class StudiesService {
             else if (a.start > b.start) return -1;
             else if (a.start < b.start) return 1;
             else return 0;
-         }
-         else if (`${a_End}` !== 'NaN' && `${b_End}` === 'NaN') {
-            return 1;
-         }
-         else if (`${a_End}` === 'NaN' && `${b_End}` !== 'NaN') {
+         } else if (`${a_End}` !== 'NaN' && `${b_End}` === 'NaN') {
             return -1;
-         }
-         else {
+         } else if (`${a_End}` === 'NaN' && `${b_End}` !== 'NaN') {
+            return 1;
+         } else {
             if (a.start > b.start) return -1;
             else if (a.start < b.start) return 1;
             else return 0;
          }
-      }
-      else if (a.end && !b.end) {
-         if (`${a_End}` === 'NaN') return -1;
+      } else if (a.end && !b.end) {
+         if (`${a_End}` === 'NaN') return 1;
          else {
             if (a_End > b.start) return -1;
             else return 1;
          }
-      }
-      else if (!a.end && b.end) {
-         if (`${b_End}` === 'NaN') return 1;
+      } else if (!a.end && b.end) {
+         if (`${b_End}` === 'NaN') return -1;
          else {
             if (a.start >= b_End) return -1;
             else return 1;
          }
-      }
-      else {
+      } else {
          if (a.start > b.start) return -1;
          else if (a.start < b.start) return 1;
          else return 0;

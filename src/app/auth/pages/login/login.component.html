@@ -6,15 +6,16 @@
       <div class="field">
         <span class="p-float-label">
           <input
+            pInputText
             id="user"
             class="p-inputtext-lg w-12"
             type="text"
-            pInputText
             formControlName="email"
+            (blur)="onBlurEvent($event)"
           />
-          <label for="email">Usuario</label>
+          <label for="email">Email</label>
         </span>
-        <small *ngIf="invalidField('email')" class="p-error block">
+        <small *ngIf="isInvalidField('email')" class="p-error block">
           El campo es obligatorio en formato email.
         </small>
       </div>
@@ -22,15 +23,16 @@
       <div class="field">
         <span class="p-float-label">
           <input
+            pInputText
             id="password"
             class="p-inputtext-lg w-12"
             type="password"
-            pInputText
             formControlName="password"
+            (blur)="onBlurEvent($event)"
           />
           <label for="password">Contraseña</label>
         </span>
-        <small *ngIf="invalidField('password')" class="p-error block">
+        <small *ngIf="isInvalidField('password')" class="p-error block">
           Mínimo 6 caracteres.
         </small>
       </div>
