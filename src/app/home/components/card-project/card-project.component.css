@@ -20,10 +20,10 @@
    .card-project {
       padding: 2rem 4vw;
    }
-}
-
-@media screen and (min-width: 900px) {
    .h-study {
       font-size: 27px !important;
    }
+}
+
+@media screen and (min-width: 900px) {
 }

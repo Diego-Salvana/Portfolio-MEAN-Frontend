@@ -1,4 +1,4 @@
-.studies-container {
+.studies-section {
    padding-bottom: 14rem;
    overflow-y: hidden;
 }
@@ -26,6 +26,10 @@
    opacity: 0;
    background-color: #303030;
    transition: opacity 0.5s ease-in;
+}
+
+.cards-container {
+   max-width: max-content;
 }
 
 .animate {

@@ -8,6 +8,7 @@
    background-image: url("../../../../assets/laptop-2667131_1920.jpg");
    background-repeat: no-repeat;
    background-position: center;
+   background-size: cover;
    filter: brightness(0.3);
 }
 
