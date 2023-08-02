@@ -96,15 +96,15 @@ export class StudiesService {
       const b_End = Number(b.end);
 
       if (a.end && b.end) {
-         if (`${a_End}` !== 'NaN' && `${b_End}` !== 'NaN') {
+         if (!isNaN(a_End) && !isNaN(b_End)) {
             if (a_End > b_End) return -1;
             else if (a_End < b_End) return 1;
             else if (a.start > b.start) return -1;
             else if (a.start < b.start) return 1;
             else return 0;
-         } else if (`${a_End}` !== 'NaN' && `${b_End}` === 'NaN') {
+         } else if (!isNaN(a_End) && isNaN(b_End)) {
             return -1;
-         } else if (`${a_End}` === 'NaN' && `${b_End}` !== 'NaN') {
+         } else if (isNaN(a_End) && !isNaN(b_End)) {
             return 1;
          } else {
             if (a.start > b.start) return -1;
@@ -112,13 +112,13 @@ export class StudiesService {
             else return 0;
          }
       } else if (a.end && !b.end) {
-         if (`${a_End}` === 'NaN') return 1;
+         if (isNaN(a_End)) return 1;
          else {
             if (a_End > b.start) return -1;
             else return 1;
          }
       } else if (!a.end && b.end) {
-         if (`${b_End}` === 'NaN') return -1;
+         if (isNaN(b_End)) return -1;
          else {
             if (a.start >= b_End) return -1;
             else return 1;
