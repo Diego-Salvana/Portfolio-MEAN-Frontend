@@ -19,7 +19,7 @@ export class FormProjectComponent implements OnInit {
    formProject: FormGroup = this.formBuilder.group({
       _id: null,
       name: ['', [Validators.required, Validators.maxLength(50)]],
-      description: ['', [Validators.required, Validators.maxLength(250)]],
+      description: ['', [Validators.required]],
       linkWeb: [''],
       linkGitHub: ['', Validators.required],
    });
