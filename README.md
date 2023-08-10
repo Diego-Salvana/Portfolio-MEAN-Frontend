@@ -1,6 +1,6 @@
 # Portafolio (Frontend)
 
-Este portafolio es una aplicación desarrollada en Angular que cuenta con un módulo de autenticación para permitir la modicación de la información mostrada y se almacena en una base de datos a través de una API Rest.
+Este portafolio es una aplicación desarrollada en Angular que cuenta con un módulo de autenticación para permitir la modificación de la información mostrada y se almacena en una base de datos a través de una API Rest.
 
 ## Tecnologías utilizadas
 - Angular
