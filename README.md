@@ -11,6 +11,7 @@ Este portafolio es una aplicación desarrollada en Angular que cuenta con un mó
 
 -  Ubicarse en la carpeta que contendrá el proyecto
 -  Clonar repositorio e instalar dependencias
+
    ```bash
    - git clone https://github.com/Diego-Salvana/Portfolio-MEAN-Frontend.git
    - npm install
@@ -18,6 +19,7 @@ Este portafolio es una aplicación desarrollada en Angular que cuenta con un mó
 -  Configuración de environments
    -  Dentro de la carpeta "environments" crear los archivos correspondientes para producción y desarrollo tomando como ejemplo environment.exp.ts
 -  Levantar servidor local
+
    ```bash
    - cd Portfolio-MEAN-Frontend
    - ng serve --open
