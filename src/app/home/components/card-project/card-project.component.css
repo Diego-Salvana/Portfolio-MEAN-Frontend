@@ -3,7 +3,7 @@
    justify-content: flex-start;
    padding: 2rem 5vw;
    margin: auto;
-   background-color: #303030;
+   background-color: #252525;
    border-radius: 1rem;
    max-width: 1100px;
 }
@@ -16,6 +16,10 @@
    float: right;
 }
 
+.text-description {
+   font-size: 17px;
+}
+
 @media screen and (min-width: 768px) {
    .card-project {
       padding: 2rem 4vw;
@@ -23,7 +27,7 @@
    .h-study {
       font-size: 27px !important;
    }
-}
-
-@media screen and (min-width: 900px) {
+   .text-description {
+      font-size: 19.5px;
+   }
 }

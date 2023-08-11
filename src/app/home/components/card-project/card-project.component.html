@@ -17,7 +17,7 @@
       {{ name }}
     </h3>
 
-    <p class="text-lg md:text-xl mb-4 text-500">{{ description }}</p>
+    <p class="text-description mb-4 text-500">{{ description }}</p>
 
     <div *ngIf="typeCard === 'project'">
       <a *ngIf="linkWeb" [href]="linkWeb" target="_blank" rel="noopener">
@@ -38,8 +38,8 @@
     </div>
 
     <div *ngIf="typeCard === 'study'">
-      <span class="text-xl mb-4 text-500">{{ start }} </span>
-      <span *ngIf="end" class="text-xl mb-4 text-500">- {{ end }}</span>
+      <span class="text-description mb-4 text-500">{{ start }} </span>
+      <span *ngIf="end" class="text-description mb-4 text-500">- {{ end }}</span>
     </div>
   </div>
 </div>
