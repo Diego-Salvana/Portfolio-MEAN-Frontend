@@ -5,12 +5,12 @@
 }
 
 .skill ::ng-deep i {
-   font-size: 6rem;
+   font-size: 4.89rem;
    color: inherit;
 }
 
 @media screen and (max-width: 768px) {
    .skill ::ng-deep i {
-      font-size: 5rem;
+      font-size: 4.2rem;
    }
 }

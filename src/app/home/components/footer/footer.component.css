@@ -18,6 +18,10 @@ li > span:hover {
    border-bottom: 3px solid var(--green-400);
 }
 
+.contact {
+   user-select: none;
+}
+
 .line {
    height: 0.5rem;
    background-color: var(--green-700);

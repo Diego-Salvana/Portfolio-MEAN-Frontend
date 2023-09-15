@@ -6,7 +6,9 @@
   ></app-edit-button>
   <h2 class="mt-5 mb-4">Acerca</h2>
   <div class="text-about">
-    <span class="sm:hidden">Mi nombre es Diego Salvañá. </span>
-    <span>{{ (aboutMe | async)?.aboutMeText }}</span>
+    <div class="about-container">
+      <span class="sm:hidden">Mi nombre es Diego Salvañá. </span>
+      <span>{{ (aboutMe | async)?.aboutMeText }}</span>
+    </div>
   </div>
 </section>

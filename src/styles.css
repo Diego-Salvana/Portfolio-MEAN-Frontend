@@ -14,6 +14,7 @@ html,
 body {
    width: 100%;
    background-color: var(--surface-b);
+   /* background-color: var(--primary-color-text); */
    font-family: var(--font-family);
    color: var(--text-color);
    scroll-behavior: smooth;

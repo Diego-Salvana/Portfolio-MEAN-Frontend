@@ -16,6 +16,11 @@ app-edit-button {
    color: var(--surface-600);
 }
 
+.about-container {
+   max-width: 1260px;
+   margin: auto;
+}
+
 @media screen and (min-width: 1000px) {
    .text-about {
       padding: 0 15vw;
