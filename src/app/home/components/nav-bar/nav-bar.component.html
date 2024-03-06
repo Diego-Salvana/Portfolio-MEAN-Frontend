@@ -1,39 +1,51 @@
-<div id="inicio" class="toolbar-container py-1">
-  <p-toolbar>
-    <a class="p-toolbar-group-start cursor-pointer select-none" href="/">
-      <i class="pi pi-chevron-left"></i>
-      <span class="ds">ds</span>
-      <i class="pi pi-chevron-right"></i>
-    </a>
+<nav>
+  <div class="toolbar-container">
+    <p-toolbar>
+      <div class="p-toolbar-group-start">
+        <a class="cursor-pointer select-none" href="/">
+          <i class="pi pi-chevron-left"></i>
+          <span class="ds">ds</span>
+          <i class="pi pi-chevron-right"></i>
+        </a>
 
-    <div class="p-toolbar-group-end">
-      <div class="hidden sm:block">
-        <a
-          href="https://www.linkedin.com/in/diego-salvana/"
-          target="_blank"
-          rel="noopener"
-          class="mr-3"
-        >
-          <i class="pi pi-linkedin"></i>
-        </a>
-        <a
-          href="https://github.com/Diego-Salvana"
-          target="_blank"
-          rel="noopener"
-          class="mr-3"
-        >
-          <i class="pi pi-github"></i>
-        </a>
+        <ul class="menu">
+          <li>Proyectos</li>
+          <li>Tecnologías</li>
+          <li>Maquetado</li>
+          <li>Contacto</li>
+        </ul>
       </div>
 
-      <div #loginBtnRef>
-        <app-button-primeng
-          class="navBtn"
-          [label]="labelBtn"
-          (click)="goLogin()"
-          [customNgClass]="{ 'p-button-outlined': isLogged }"
-        ></app-button-primeng>
+      <div class="p-toolbar-group-end">
+        <div class="btn-social">
+          <a href="https://www.linkedin.com/in/diego-salvana/" target="_blank" rel="noreferrer" class="mr-3">
+            <i class="pi pi-linkedin"></i>
+          </a>
+          <a href="https://github.com/Diego-Salvana" target="_blank" rel="noreferrer" class="mr-3">
+            <i class="pi pi-github"></i>
+          </a>
+        </div>
+
+        <div class="btn-login">
+          <app-button-primeng
+            class="navBtn"
+            [label]="labelBtn"
+            (click)="goLogin()"
+            [customNgClass]="{ 'p-button-outlined p-button-secondary': isLogged }"
+          ></app-button-primeng>
+        </div>
+
+        <button #btnHamburger class="btn-mobile" (click)="showModal($event)">
+          <i class="pi pi-bars"></i>
+        </button>
       </div>
-    </div>
-  </p-toolbar>
-</div>
+    </p-toolbar>
+  </div>
+
+  <app-modal-menu
+    [isHidden]="hideModal"
+    [isLogged]="isLogged"
+    (hideModalEmitter)="hideModal = true; chekHtmlScroll()"
+    (loginEmitter)="goLogin()"
+  ></app-modal-menu>
+</nav>

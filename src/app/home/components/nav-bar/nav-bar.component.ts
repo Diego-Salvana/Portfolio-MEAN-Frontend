@@ -14,6 +14,8 @@ export class NavBarComponent implements OnInit, OnDestroy {
    labelBtn: string = '';
    isLogged: boolean = false;
    private subscription = new Subscription();
+   hideModal = true;
+   private htmlElement = document.querySelector('html');
 
    constructor(private router: Router, private authSvc: AuthService) {}
 
@@ -21,9 +23,7 @@ export class NavBarComponent implements OnInit, OnDestroy {
       this.subscription = this.isLogged$.subscribe((logged) => {
          this.isLogged = logged;
 
-         logged
-            ? (this.labelBtn = 'Salir')
-            : (this.labelBtn = 'Iniciar Sesión');
+         logged ? (this.labelBtn = 'Cerrar Sesión') : (this.labelBtn = 'Iniciar Sesión');
       });
    }
 
@@ -37,5 +37,19 @@ export class NavBarComponent implements OnInit, OnDestroy {
          this.authSvc.setIsLogged(false);
          localStorage.removeItem('jwToken');
       }
+   }
+
+   showModal(event: MouseEvent): void {
+      event.stopPropagation();
+      this.hideModal = !this.hideModal;
+
+      this.chekHtmlScroll();
+   }
+
+   chekHtmlScroll(): void {
+      if (!this.htmlElement) return;
+
+      if (this.hideModal) this.htmlElement.style.overflowY = 'auto';
+      else this.htmlElement.style.overflowY = 'hidden';
    }
 }

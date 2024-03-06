@@ -1,0 +1,16 @@
+<div  id="mobile-nav-container" [class.modal-hidden]="isHidden">
+  <aside #modalMobile class="mobile-nav">
+    <ul class="menu">
+      <li routerLink="/" fragment="projects" (click)="hideModalEmitter.emit()">Proyectos</li>
+      <li routerLink="/" fragment="tecnologies" (click)="hideModalEmitter.emit()">Tecnologías</li>
+      <li (click)="hideModalEmitter.emit()">Maquetado</li>
+      <li (click)="hideModalEmitter.emit()">Contacto</li>
+    </ul>
+
+    <div class="separator"></div>
+
+    <button class="auth-btn-mobile" [class.logout]="isLogged" (click)="goLogin()">
+      {{ isLogged ? "Cerrar Sesión" : "Iniciar Sesión" }}
+    </button>
+  </aside>
+</div>

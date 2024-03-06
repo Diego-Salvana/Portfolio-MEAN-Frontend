@@ -1,40 +1,46 @@
-<header class="perfil-container">
+<header id="initial">
   <div class="bg"></div>
-  <div class="perfil__foto">
-    <div class="img-container">
-      <img [src]="profilePicture" *ngIf="!isLoading; else skeleton" />
-      <ng-template #skeleton>
-        <div style="width: 100%; height: 100%; background-color: #222">
-          <p-skeleton shape="circle" width="100%" height="100%"></p-skeleton>
-        </div>
-      </ng-template>
+
+  <app-nav-bar [isLogged$]="isLogged$"></app-nav-bar>
+
+  <div class="perfil">
+    <div class="perfil__foto">
+      <div class="img-container">
+        <img [src]="profilePicture" *ngIf="!isLoading; else skeleton" />
+        <ng-template #skeleton>
+          <div style="width: 100%; height: 100%; background-color: #222">
+            <p-skeleton width="100%" height="100%"></p-skeleton>
+          </div>
+        </ng-template>
+      </div>
+
+      <div *ngIf="isLogged$ | async" class="input-container">
+        <label
+          pButton
+          pRipple
+          label="Subir imagen"
+          for="fileInput"
+          class="p-button-sm p-button-warning"
+        ></label>
+        <input
+          type="file"
+          accept=".png, .jpg, .jpeg"
+          id="fileInput"
+          class="hidden"
+          (change)="updateProfilePicture($event)"
+        />
+      </div>
     </div>
 
-    <div *ngIf="isLogged$ | async" class="input-container">
-      <label
-        pButton
-        pRipple
-        label="Subir imagen"
-        for="fileInput"
-        class="p-button-sm p-button-warning"
-      ></label>
-      <input
-        type="file"
-        accept=".png, .jpg, .jpeg"
-        id="fileInput"
-        class="hidden"
-        (change)="updateProfilePicture($event)"
-      />
-    </div>
-  </div>
+    <div [ngStyle]="{ 'padding-bottom': (isLogged$ | async) ? '32px' : 0 }" class="perfil__text">
+      <h1>
+        <span class="hello text-bg">Hola!, soy </span>
+        <span class="name text-bg">Diego Salvañá</span>
+      </h1>
+      <h4 class="job text-bg">- Desarrollador Front End -</h4>
 
-  <div
-    [ngStyle]="{ 'padding-bottom': (isLogged$ | async) ? '32px' : 0 }"
-    class="perfil__text hidden sm:block"
-  >
-    <h3 class="mb-3 text-bg">Hola!, soy</h3>
-    <h2 class="mb-3 text-bg">Diego Salvañá</h2>
-    <h4 class="text-bg">- Front End Developer -</h4>
+      <app-about-me [isLogged$]="isLogged$"></app-about-me>
+    </div>
   </div>
 </header>
 

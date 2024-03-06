@@ -1,14 +1,9 @@
-<section id="acerca" class="pb-7 mt-0">
+<article>
   <app-edit-button
     *ngIf="isLogged$ | async"
     class="p-button-raised p-button-info p-button-text p-button-lg"
     routerLink="/edition/edit/aboutme"
   ></app-edit-button>
-  <h2 class="mt-5 mb-4">Acerca</h2>
-  <div class="text-about">
-    <div class="about-container">
-      <span class="sm:hidden">Mi nombre es Diego Salvañá. </span>
-      <span>{{ (aboutMe | async)?.aboutMeText }}</span>
-    </div>
-  </div>
-</section>
+
+  <p class="about">{{ (aboutMe | async)?.aboutMeText }}</p>
+</article>

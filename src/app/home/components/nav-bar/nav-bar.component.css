@@ -1,38 +1,22 @@
-.ap-logo {
-   background-color: var(--surface-300);
-   width: 120px;
-   border-radius: 5px;
+nav {
+   position: relative;
+   z-index: 500;
+   background-color: var(--almost-black);
+   background-color: transparent;
+   background: linear-gradient(to bottom, var(--almost-black), transparent);
 }
 
 .toolbar-container {
-   padding: 0 2vw;
+   padding: 24px;
+   max-width: 1100px;
+   margin: auto;
 }
 
 p-toolbar ::ng-deep .p-toolbar {
    align-items: flex-end;
-}
-
-.p-toolbar-group-end {
-   display: flex;
-   align-items: center;
-   padding-bottom: 4px;
-}
-
-.p-toolbar-group-end i {
-   font-size: 21px;
-   color: var(--surface-300);
-   transition: all 0.1s ease-in;
-}
-
-.p-toolbar-group-end i:hover {
-   color: var(--surface-200);
-}
-
-@media screen and (min-width: 1000px) {
-   .toolbar-container {
-      padding-left: 12%;
-      padding-right: 12%;
-   }
+   background-color: inherit;
+   border: none;
+   padding: 0;
 }
 
 .pi-chevron-left,
@@ -52,6 +36,107 @@ p-toolbar ::ng-deep .p-toolbar {
    font-size: 2.5rem;
 }
 
+.p-toolbar-group-start {
+   display: flex;
+}
+
+.p-toolbar-group-start .menu {
+   display: none;
+   align-items: center;
+   padding-top: 10px;
+   font-size: 16px;
+   margin-left: 28px;
+}
+
+.p-toolbar-group-start .menu li {
+   font-family: Epilogue;
+   color: var(--surface-400);
+   margin: 0 16px;
+   transition: all 0.1s linear;
+}
+
+.p-toolbar-group-start .menu li:hover {
+   cursor: pointer;
+   color: var(--almost-white);
+}
+
+.p-toolbar-group-end {
+   display: flex;
+   align-items: center;
+   padding-bottom: 4px;
+}
+
+.p-toolbar-group-end i {
+   font-size: 21px;
+   color: var(--surface-300);
+   transition: all 0.1s ease-in;
+}
+
+.p-toolbar-group-end i:hover {
+   color: var(--almost-white);
+}
+
+.btn-social,
+.btn-login {
+   display: none;
+}
+
+.btn-mobile {
+   border: none;
+   background-color: inherit;
+   padding-bottom: 5px;
+   margin-right: 5px;
+   transition: all 0.1s linear;
+}
+
+.btn-mobile:hover {
+   cursor: pointer;
+}
+
+.btn-mobile:active {
+   transform: scale(0.9);
+}
+
+.btn-mobile .pi-bars {
+   font-size: 25px;
+   color: var(--almost-white);
+}
+
+.btn-mobile .pi-bars:hover {
+   color: var(--almost-white);
+}
+
 .navBtn ::ng-deep button {
    min-width: 126px;
+   font-family: Epilogue;
+   padding: 10px 16px 8px;
+   background-color: var(--surface-200);
+   color: var(--almost-white);
+   border: none;
+}
+
+.navBtn ::ng-deep button:hover {
+   background-color: var(--almost-white);
+   color: var(--almost-black);
+}
+
+@media screen and (min-width: 1440px) {
+   .toolbar-container {
+      padding: 24px 160px;
+      max-width: 2200px;
+      margin: auto;
+   }
+
+   .p-toolbar-group-start .menu {
+      display: flex;
+   }
+
+   .btn-social,
+   .btn-login {
+      display: block;
+   }
+
+   .btn-mobile {
+      display: none;
+   }
 }

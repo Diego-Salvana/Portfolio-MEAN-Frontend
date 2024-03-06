@@ -1,3 +1,18 @@
+@font-face {
+   font-family: Epilogue;
+   src: url("./assets/fonts/Epilogue-VariableFont_wght.ttf");
+}
+@font-face {
+   font-family: PoppinsRegular;
+   src: url("./assets/fonts/Poppins-Regular.ttf");
+}
+
+:root {
+   --almost-white: hsl(0, 0%, 98%);
+   --medium-gray: hsl(0, 0%, 41%);
+   --almost-black: hsl(0, 0%, 8%);
+}
+
 *,
 *::before,
 *::after {
@@ -10,12 +25,16 @@ a {
    text-decoration: none;
 }
 
+li {
+   list-style: none;
+}
+
 html,
 body {
    width: 100%;
-   background-color: var(--surface-b);
-   /* background-color: var(--primary-color-text); */
-   font-family: var(--font-family);
+   background-color: var(--almost-white);
+   /* background-color: var(--surface-b); */
+   font-family: Epilogue;
    color: var(--text-color);
    scroll-behavior: smooth;
    overflow-x: hidden;

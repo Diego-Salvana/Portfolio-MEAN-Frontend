@@ -1,0 +1,79 @@
+#mobile-nav-container {
+   position: fixed;
+   width: 100%;
+   top: 96px;
+   z-index: 500;
+   padding: 0 24px 20px;
+   transition: all 0.2s ease-out;
+   transform: translateX(0);
+}
+
+#mobile-nav-container.modal-hidden {
+   transform: translateX(100%);
+}
+
+.mobile-nav {
+   background-color: var(--almost-white);
+   font-size: 16px;
+   font-family: Epilogue;
+   font-weight: 500;
+   color: var(--almost-black);
+   text-align: center;
+   width: 100%;
+   max-width: 800px;
+   padding: 38px 25px 40px;
+   margin: auto;
+   border-radius: 1px;
+   box-shadow: 5px 5px 20px hsl(0, 0%, 13%, 0.5);
+}
+
+.menu {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+.menu li {
+   margin-bottom: 30px;
+   width: max-content;
+}
+
+.menu li:hover {
+   cursor: pointer;
+   color: black;
+}
+
+.separator {
+   background-color: var(--almost-black);
+   height: 1px;
+   max-width: 300px;
+   margin: auto;
+}
+
+.auth-btn-mobile {
+   display: block;
+   font-size: inherit;
+   font-family: Epilogue;
+   margin: auto;
+   border: none;
+   background-color: var(--almost-black);
+   color: var(--almost-white);
+   padding: 10px 14px;
+   margin: 30px auto 26px;
+   border-radius: 2px;
+   border: 2px solid var(--almost-black);
+   transition: all 0.1s linear;
+}
+
+.auth-btn-mobile:hover {
+   cursor: pointer;
+}
+
+.auth-btn-mobile:active {
+   background-color: var(--surface-200);
+}
+
+.logout {
+   background-color: var(--almost-white);
+   color: var(--almost-black);
+}

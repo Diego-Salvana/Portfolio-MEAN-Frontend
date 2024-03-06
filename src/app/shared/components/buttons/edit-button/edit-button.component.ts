@@ -8,7 +8,7 @@ import { Component, Input } from '@angular/core';
 export class EditButtonComponent {
    @Input() class: string = 'p-button-raised p-button-info p-button-text';
    @Input() icon: string = 'pi pi-pencil';
-   @Input() showDelay: number = 1000;
+   @Input() showDelay: number = 800;
    @Input() tooltip: string = 'Editar';
    @Input() tooltipPosition: string = 'bottom';
 }

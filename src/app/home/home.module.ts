@@ -19,6 +19,7 @@ import { SoftSkillsComponent } from './components/skills/soft-skills/soft-skills
 import { StudiesComponent } from './components/studies/studies.component';
 import { ModalFormComponent } from './components/skills/modal-form/modal-form.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
+import { ModalMenuComponent } from './components/modal-menu/modal-menu.component';
 
 @NgModule({
    declarations: [
@@ -35,6 +36,7 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
       StudiesComponent,
       ModalFormComponent,
       SpinnerComponent,
+      ModalMenuComponent,
    ],
    imports: [CommonModule, RouterModule, SharedModule],
    providers: [

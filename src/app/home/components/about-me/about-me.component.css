@@ -1,29 +1,31 @@
-#acerca {
-   background: radial-gradient(#202020, #1f1f1f, #1c1c1c 75%, transparent);
+article {
+   position: relative;
+   padding-top: 15px;
 }
 
 app-edit-button {
-   position: absolute;
-   right: 5vw;
-   top: 30px;
+   background-color: #222;
+   border-radius: 2px;
+   float: right;
+
+   margin-left: 10px;
+   margin-bottom: 10px;
 }
 
-.text-about {
-   padding: 0 6vw;
-   font-size: 20px;
-   font-weight: 300;
-   text-align: center;
-   color: var(--surface-600);
+.about {
+   font-size: 16px;
+   font-weight: 400;
+   line-height: 1.5;
+   max-width: 612px;
+   background-color: #0003;
+   border-radius: 10px;
+   text-shadow: 2px 2px 2px black;
 }
 
-.about-container {
-   max-width: 1100px;
-   margin: auto;
-}
-
-@media screen and (min-width: 1000px) {
-   .text-about {
-      padding: 0 15vw;
-      font-size: 21.5px;
+@media screen and (min-width: 1440px) {
+   .about {
+      font-size: 18px;
+      line-height: 1.6;
+      background-color: transparent;
    }
 }
