@@ -7,7 +7,7 @@ import { Component, Input } from '@angular/core';
 })
 export class DeleteButtonComponent {
    @Input() icon: string = 'pi pi-trash';
-   @Input() class: string = 'p-button-raised p-button-danger p-button-text ml-2';
+   @Input() class: string = 'p-button-raised p-button-danger p-button-text ml-2 bg-dark';
    @Input() tooltip: string = 'Eliminar';
    @Input() showDelay: number = 1000;
    @Input() tooltipPosition: string = 'bottom';

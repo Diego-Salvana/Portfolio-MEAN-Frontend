@@ -1,16 +1,11 @@
 <section id="projects" #projectSection>
-  <app-add-button
-    *ngIf="isLogged$ | async"
-    routerLink="/edition/create/project"
-  ></app-add-button>
+  <app-add-button *ngIf="isLogged$ | async" routerLink="/edition/create/project"></app-add-button>
 
   <h2>Proyectos</h2>
 
-  <div class="w-11 lg:w-10 xl:w-8 m-auto overflow-y-hidden cards-container">
+  <div class="m-auto overflow-y-hidden cards-container">
     <div #projectCard *ngFor="let item of projects" class="card-project">
       <app-card-project
-        typeCard="project"
-        classIcon="pi pi-wrench text-7xl"
         editLink="/edition/edit/project/{{ item._id }}"
         [name]="item.name"
         [description]="item.description"

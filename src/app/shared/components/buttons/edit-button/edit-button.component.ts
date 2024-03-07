@@ -6,7 +6,7 @@ import { Component, Input } from '@angular/core';
    styleUrls: ['./edit-button.component.css'],
 })
 export class EditButtonComponent {
-   @Input() class: string = 'p-button-raised p-button-info p-button-text';
+   @Input() class: string = 'p-button-raised p-button-info p-button-text bg-dark';
    @Input() icon: string = 'pi pi-pencil';
    @Input() showDelay: number = 800;
    @Input() tooltip: string = 'Editar';

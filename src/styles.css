@@ -33,7 +33,6 @@ html,
 body {
    width: 100%;
    background-color: var(--almost-white);
-   /* background-color: var(--surface-b); */
    font-family: Epilogue;
    color: var(--text-color);
    scroll-behavior: smooth;
@@ -42,20 +41,27 @@ body {
 
 section {
    position: relative;
-   padding-bottom: 4rem;
-   margin-top: 7rem;
-   border-bottom-style: solid;
-   border-bottom-width: 1px;
-   border-image: radial-gradient(#ccc1, 95%, transparent) 1;
+   padding: 4rem 24px;
    overflow-x: hidden;
 }
 
 section > h2 {
    margin-bottom: 4.5rem;
    text-align: center;
-   color: #f9b627;
+   color: var(--almost-black);
    font-size: calc(2.2rem + 0.3vw);
-   font-weight: 400;
+   font-weight: 700;
+}
+
+@media screen and (min-width: 1440px) {
+   section {
+      padding-top: 6rem;
+      padding-bottom: 6rem;
+   }
+
+   section > h2 {
+      font-size: 45px;
+   }
 }
 
 /* Formularios */

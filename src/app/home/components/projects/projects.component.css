@@ -1,11 +1,7 @@
 .card-project {
-   margin-bottom: 3rem;
+   margin-bottom: 5rem;
    opacity: 0;
    transition: opacity 0.5s ease-in;
-}
-
-.cards-container {
-   max-width: max-content;
 }
 
 .animate {
@@ -19,5 +15,11 @@
    }
    100% {
       transform: translateY(0);
+   }
+}
+
+@media screen and (min-width: 1440px) {
+   .cards-container {
+      padding-top: 2rem;
    }
 }

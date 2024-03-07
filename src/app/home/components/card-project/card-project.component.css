@@ -1,40 +1,108 @@
 .card-project {
    display: flex;
-   justify-content: flex-start;
-   padding: 2rem 5vw;
+   flex-direction: column;
+   align-items: center;
+   text-align: center;
    margin: auto;
-   max-width: 1100px;
-   border-radius: 1rem;
-   background: radial-gradient(#202020, #1f1f1f, #1c1c1c 75%, transparent);
-   border: 1px solid #555;
-   font-weight: 300;
+   max-width: 615px;
 }
 
-.icon-container {
-   color: rgba(0, 0, 0, 0.4);
+.card-project__img-container {
+   width: 60vw;
+   max-width: 300px;
 }
 
-.float {
+.card-project__img-container img {
+   width: 100%;
+   height: 100%;
+   object-fit: contain;
+}
+
+.card-project__description {
+   padding-top: 30px;
+}
+
+.card-project__description a {
+   display: inline-block;
+}
+
+.edition-btns {
    float: right;
+   margin-left: 5px;
+   margin-bottom: 5px;
 }
 
-.text-description {
-   font-size: 17px;
+.project-title {
+   font-weight: 700;
+   font-size: 25px;
+   color: var(--almost-black);
+   padding-bottom: 16px;
 }
 
-.border-none {
-   border: none;
-   background: transparent;
+.text-description,
+.technologies {
+   font-weight: 500;
+   font-size: 16px;
+   color: var(--medium-gray);
+   line-height: 1.5;
 }
 
-@media screen and (min-width: 768px) {
+.technologies {
+   margin-bottom: 20px;
+}
+
+.btn-black {
+   display: flex;
+   align-items: center;
+   background: var(--almost-black);
+   color: var(--almost-white);
+   font-weight: 700;
+   font-size: 16px;
+   font-family: Epilogue;
+   border: 2px solid var(--almost-black);
+   padding: 10px 14px;
+   border-radius: 1px;
+   transition: all 0.1s linear;
+}
+
+.btn-black:hover {
+   background-color: var(--almost-white);
+   color: var(--almost-black);
+   cursor: pointer;
+}
+
+.btn-black i {
+   font-size: 16px;
+}
+
+.btn-black span {
+   display: inline-block;
+   margin-left: 8px;
+   transform: translateY(1px);
+}
+
+@media screen and (min-width: 1440px) {
    .card-project {
-      padding: 2rem 4vw;
+      flex-direction: row;
+      max-width: 1000px;
    }
-   .h-study {
-      font-size: 27px !important;
+
+   .card-project__img-container {
+      max-width: 250px;
    }
-   .text-description {
-      font-size: 19.5px;
+
+   .card-project__description {
+      text-align: left;
+      padding-top: 0;
+      padding-left: 80px;
+   }
+
+   .project-title {
+      font-size: 28px;
+   }
+
+   .text-description,
+   .technologies {
+      font-size: 17px;
    }
 }
