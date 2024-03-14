@@ -15,11 +15,11 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { SkillsComponent } from './components/skills/skills.component';
-import { SoftSkillsComponent } from './components/skills/soft-skills/soft-skills.component';
-import { StudiesComponent } from './components/studies/studies.component';
 import { ModalFormComponent } from './components/skills/modal-form/modal-form.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { ModalMenuComponent } from './components/modal-menu/modal-menu.component';
+import { LayoutsComponent } from './components/layouts/layouts.component';
+import { LayoutCardComponent } from './components/layout-card/layout-card.component';
 
 @NgModule({
    declarations: [
@@ -32,16 +32,14 @@ import { ModalMenuComponent } from './components/modal-menu/modal-menu.component
       NavBarComponent,
       ProjectsComponent,
       SkillsComponent,
-      SoftSkillsComponent,
-      StudiesComponent,
       ModalFormComponent,
       SpinnerComponent,
       ModalMenuComponent,
+      LayoutsComponent,
+      LayoutCardComponent,
    ],
    imports: [CommonModule, RouterModule, SharedModule],
-   providers: [
-      { provide: HTTP_INTERCEPTORS, useClass: SpinnerInterceptor, multi: true },
-   ],
+   providers: [{ provide: HTTP_INTERCEPTORS, useClass: SpinnerInterceptor, multi: true }],
    exports: [HomePageComponent],
 })
 export class HomeModule {}

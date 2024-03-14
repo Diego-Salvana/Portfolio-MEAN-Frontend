@@ -1,0 +1,33 @@
+.cards-container {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(300px, max-content));
+   justify-content: center;
+   column-gap: 50px;
+   row-gap: 50px;
+   padding-bottom: 40px;
+}
+
+.card {
+   max-width: 300px;
+   border-radius: 2px;
+   overflow: hidden;
+   opacity: 0;
+   transition: all 0.5s ease-in;
+}
+
+.show {
+   opacity: 1;
+}
+
+@media screen and (min-width: 1440px) {
+   .cards-container {
+      grid-template-columns: repeat(auto-fit, minmax(350px, max-content));
+      justify-content: space-between;
+      padding-top: 16px;
+      padding-bottom: 80px;
+   }
+
+   .card {
+      max-width: 350px;
+   }
+}

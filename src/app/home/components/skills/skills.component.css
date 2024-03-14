@@ -1,7 +1,27 @@
-#habilidades {
+#technologies {
    background-color: var(--almost-black);
+}
+
+h2 {
+   color: var(--almost-white);
+}
+
+.skills-container {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-wrap: wrap;
+   row-gap: 40px;
+   column-gap: 40px;
 }
 
 .field {
    padding-top: 1rem;
+}
+
+@media screen and (min-width: 1440px) {
+   .skills-container {
+      row-gap: 50px;
+      column-gap: 50px;
+   }
 }

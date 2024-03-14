@@ -42,7 +42,6 @@ body {
 section {
    position: relative;
    padding: 4rem 24px;
-   overflow-x: hidden;
 }
 
 section > h2 {
@@ -57,10 +56,12 @@ section > h2 {
    section {
       padding-top: 6rem;
       padding-bottom: 6rem;
+      padding: 6rem 160px;
    }
 
    section > h2 {
       font-size: 45px;
+      margin-bottom: 6.5rem;
    }
 }
 

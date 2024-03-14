@@ -2,11 +2,9 @@
 
 <div>
   <app-header [isLogged$]="isLogged$"></app-header>
-
   <app-projects [isLogged$]="isLogged$" [documentScroll$]="documentScroll$"></app-projects>
   <app-skills [isLogged$]="isLogged$" (modalEmit)="changeAvailableSpinner($event)"></app-skills>
-
-  <!-- <app-studies [isLogged$]="isLogged$" [documentScroll$]="documentScroll$"></app-studies> -->
+  <app-layouts [isLogged$]="isLogged$"></app-layouts>
 
   <app-footer></app-footer>
 </div>

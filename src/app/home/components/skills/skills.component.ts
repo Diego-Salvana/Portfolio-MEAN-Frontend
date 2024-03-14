@@ -1,10 +1,10 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-
 import { ConfirmationService } from 'primeng/api';
 import { Observable } from 'rxjs';
 
 import { Skill } from '../../../shared/interfaces/skill.interface';
 import { SkillsService } from '../../../shared/services/skills.service';
+import { skillsMock } from 'src/app/shared/helpers/skillsMock';
 
 @Component({
    selector: 'app-skills',
@@ -16,6 +16,8 @@ export class SkillsComponent implements OnInit {
    skills: Skill[] = [];
    @Input() isLogged$!: Observable<boolean>;
    @Output() modalEmit: EventEmitter<boolean> = new EventEmitter();
+
+   skillsM: Skill[] = skillsMock;
 
    constructor(
       private skillsSvc: SkillsService,

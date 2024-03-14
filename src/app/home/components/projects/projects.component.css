@@ -17,9 +17,3 @@
       transform: translateY(0);
    }
 }
-
-@media screen and (min-width: 1440px) {
-   .cards-container {
-      padding-top: 2rem;
-   }
-}

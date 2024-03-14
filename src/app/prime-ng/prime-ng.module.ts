@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 
+import { AnimateModule } from 'primeng/animate';
 import { ButtonModule } from 'primeng/button';
 import { ColorPickerModule } from 'primeng/colorpicker';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
@@ -19,6 +20,7 @@ import { TooltipModule } from 'primeng/tooltip';
 
 @NgModule({
    exports: [
+      AnimateModule,
       ButtonModule,
       ColorPickerModule,
       ConfirmDialogModule,

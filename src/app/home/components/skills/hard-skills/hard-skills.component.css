@@ -1,16 +1,38 @@
+:host {
+   --skill-width-mobile: 70px;
+   --skill-width-desktop: 90px;
+}
+
 .skill {
-   color: var(--surface-300);
    display: flex;
    justify-content: center;
+   align-items: center;
+   width: var(--skill-width-mobile);
+   transition: all 0.1s linear;
 }
 
-.skill ::ng-deep i {
-   font-size: 4.89rem;
-   color: inherit;
+.reduce-width {
+   width: calc(var(--skill-width-mobile) * 0.85);
 }
 
-@media screen and (max-width: 768px) {
-   .skill ::ng-deep i {
-      font-size: 4.2rem;
+.increase-width {
+   width: calc(var(--skill-width-mobile) * 1.14);
+}
+
+@media screen and (min-width: 1440px) {
+   .skill {
+      width: var(--skill-width-desktop);
+   }
+
+   .skill:hover {
+      transform: scale(1.2);
+   }
+
+   .reduce-width {
+      width: calc(var(--skill-width-desktop) * 0.85);
+   }
+
+   .increase-width {
+      width: calc(var(--skill-width-desktop) * 1.14);
    }
 }

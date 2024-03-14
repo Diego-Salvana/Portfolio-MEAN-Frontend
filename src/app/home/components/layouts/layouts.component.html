@@ -1,0 +1,17 @@
+<section id="layouts">
+  <app-add-button *ngIf="isLogged$ | async"></app-add-button>
+
+  <h2>Maquetado</h2>
+
+  <div class="m-auto cards-container">
+    <div #layoutCard *ngFor="let item of layoutProjectsMock" class="card shadow-3">
+      <app-layout-card
+        [imageUrl]="item.imageUrl"
+        [title]="item.title"
+        [technologies]="item.technologies"
+        [linkWeb]="item.linkWeb"
+        [linkGitHub]="item.linkGitHub"
+      ></app-layout-card>
+    </div>
+  </div>
+</section>

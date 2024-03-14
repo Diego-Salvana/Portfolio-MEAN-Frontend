@@ -1,6 +1,6 @@
 <div class="card-project">
   <div class="card-project__img-container">
-    <img src="../../../../assets/projects-images/miniatura-portafolio.png" alt="Project Image" />
+    <img src="../../../../assets/images/miniatura-portafolio.png" alt="Project Image" />
   </div>
 
   <div class="card-project__description">
@@ -18,8 +18,8 @@
     <p class="technologies"><strong>Tecnologías:</strong> {{ splitDescription().technologies }}</p>
 
     <div>
-      <a *ngIf="linkWeb" [href]="linkWeb" target="_blank" rel="noreferrer">
-        <button pRipple class="btn-black mr-3">
+      <a *ngIf="linkWeb" [href]="linkWeb" target="_blank" rel="noreferrer" class="mr-3">
+        <button pRipple class="btn-black">
           <i class="pi pi-globe"></i>
           <span>Link Web</span>
         </button>

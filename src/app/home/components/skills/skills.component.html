@@ -1,27 +1,18 @@
-<section id="habilidades">
-  <app-add-button
-    *ngIf="isLogged$ | async"
-    routerLink="/edition/create/skill"
-  ></app-add-button>
+<section id="technologies">
+  <app-add-button *ngIf="isLogged$ | async" routerLink="/edition/create/skill"></app-add-button>
 
-  <h2>Habilidades</h2>
+  <h2>Tecnologías</h2>
 
-  <div
-    class="w-11 xl:w-10 m-auto flex flex-wrap justify-content-center row-gap-8 pt-4 pb-8 mb-7"
-    style="max-width: 1500px;"
-  >
+  <div class="skills-container">
     <app-hard-skills
-      *ngFor="let item of skills"
+      *ngFor="let item of skillsM"
       [name]="item.name"
       [skillIcon]="item.iconHTML"
-      [colorIcon]="item.color || ''"
+      [isLogged$]="isLogged$"
       (onEdit)="showModal(item)"
       (onDelete)="delete(item._id!)"
-      [isLogged$]="isLogged$"
     ></app-hard-skills>
   </div>
-
-  <app-soft-skills></app-soft-skills>
 </section>
 
 <!-- MODAL -->
