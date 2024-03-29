@@ -10,16 +10,18 @@
 .card-project__img-container {
    width: 70vw;
    max-width: 300px;
+   filter: brightness(0.95);
 }
 
 .card-project__img-container img {
    width: 100%;
    height: 100%;
    object-fit: contain;
+   display: block;
 }
 
 .card-project__description {
-   padding-top: 30px;
+   padding-top: 20px;
 }
 
 .card-project__description a {
@@ -57,7 +59,7 @@
    background: var(--almost-black);
    color: var(--almost-white);
    font-weight: 700;
-   font-size: 16px;
+   font-size: 15px;
    font-family: Epilogue;
    border: 2px solid var(--almost-black);
    padding: 10px 14px;
@@ -72,7 +74,7 @@
 }
 
 .btn-black i {
-   font-size: 16px;
+   font-size: 15px;
 }
 
 .btn-black span {
@@ -89,6 +91,11 @@
 
    .card-project__img-container {
       max-width: 250px;
+      filter: grayscale(1);
+   }
+
+   .card-project:hover .card-project__img-container {
+      filter: grayscale(0);
    }
 
    .card-project__description {

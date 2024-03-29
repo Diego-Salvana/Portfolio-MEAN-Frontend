@@ -1,44 +1,181 @@
+:host {
+   --error-color: hsl(0, 86%, 61%);
+}
+
 .footer {
-   color: var(--surface-400);
-   background-color: #000d;
-   min-height: 140px;
-   padding: 30px 11vw 30px;
-   font-size: 1.25rem;
-   font-weight: normal;
-}
-
-li > span {
-   padding-bottom: 0.25rem;
-   cursor: pointer;
-   transition: all 0.1s ease-out;
-}
-
-li > span:hover {
-   color: var(--surface-300);
-   border-bottom: 3px solid var(--green-400);
+   background-color: var(--almost-black);
 }
 
 .contact {
-   user-select: none;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   padding-bottom: 22px;
+}
+
+.contact__title {
+   color: var(--almost-white);
+}
+
+.contact__form {
+   width: 100%;
+   max-width: 615px;
+}
+
+fieldset {
+   border: none;
+   margin-bottom: 16px;
+   position: relative;
+}
+
+input,
+textarea {
+   width: 100%;
+   background-color: var(--almost-white);
+   border: none;
+   font-family: Epilogue;
+   font-weight: 500;
+   font-size: 16px;
+   padding: 10px 14px;
+   resize: vertical;
+}
+
+input::placeholder,
+textarea::placeholder {
+   color: var(--surface-200);
+   font-weight: 500;
+}
+
+.error-text {
+   height: 0;
+   overflow: hidden;
+   font-size: 14px;
+   line-height: 12px;
+   color: var(--error-color);
+   margin-top: 6px;
+   transition: all 0.1s linear;
+}
+
+.ng-invalid.ng-submitted [formControlName].ng-invalid {
+   outline: 2px solid var(--error-color);
+}
+
+.ng-invalid.ng-submitted [formControlName].ng-invalid::placeholder {
+   color: var(--error-color);
+}
+
+.ng-invalid.ng-submitted [formControlName].ng-invalid + .error-text {
+   height: 15px;
+}
+
+.btn-submit {
+   background: var(--almost-white);
+   color: var(--almost-black);
+   font-weight: 700;
+   font-size: 16px;
+   font-family: Epilogue;
+   border: 2px solid var(--almost-white);
+   padding: 10px 48px;
+   border-radius: 1px;
+   transition: all 0.1s linear;
+}
+
+.btn-submit:hover {
+   background-color: var(--almost-black);
+   color: var(--almost-white);
+   cursor: pointer;
+}
+
+.btn-submit:disabled {
+   opacity: 0.5;
+   pointer-events: none;
 }
 
 .line {
-   height: 0.5rem;
-   background-color: var(--green-700);
-   border-radius: 50%;
+   height: 1px;
+   background-color: #d39309;
+   margin: 50px 0;
 }
 
-.media-icons {
-   padding-bottom: 1.5rem;
-   text-align: center;
+.nav-menu {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   row-gap: 40px;
+   font-weight: 500;
+   font-size: 15px;
 }
 
-.media-icons i {
+.nav-menu__list {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   row-gap: 20px;
+}
+
+.nav-menu__list li {
+   width: max-content;
+}
+
+.nav-menu__list li:hover {
+   color: var(--medium-gray);
+   cursor: pointer;
+}
+
+.nav-menu__social {
+   display: flex;
+   align-items: center;
+}
+
+.nav-menu__social .btns {
+   margin-left: 20px;
+}
+
+.nav-menu__social .btns i {
    font-size: 21px;
-   color: var(--surface-300);
-   transition: all 0.1s ease-in;
+   color: var(--almost-white);
 }
 
-.media-icons i:hover {
-   color: var(--surface-200);
+.nav-menu__social .btns i:hover {
+   color: var(--medium-gray);
+}
+
+@media screen and (min-width: 1000px) {
+   .nav-menu {
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 0 20px;
+   }
+
+   .nav-menu__list {
+      flex-direction: row;
+      column-gap: 30px;
+   }
+}
+
+@media screen and (min-width: 1440px) {
+   section {
+      padding-bottom: 60px;
+   }
+
+   .contact {
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: center;
+      column-gap: 150px;
+      max-width: 1000px;
+      margin: auto;
+      padding-top: 16px;
+      padding-bottom: 62px;
+   }
+
+   .contact__form {
+      max-width: unset;
+   }
+
+   input,
+   textarea {
+      font-size: 17px;
+      padding: 12px 16px;
+   }
 }

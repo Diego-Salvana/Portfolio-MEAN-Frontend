@@ -1,5 +1,4 @@
 import { Component, ElementRef, EventEmitter, HostListener, Input, Output, ViewChild } from '@angular/core';
-import { Router } from '@angular/router';
 
 @Component({
    selector: 'app-modal-menu',
@@ -12,8 +11,6 @@ export class ModalMenuComponent {
    @ViewChild('modalMobile') modalMobile!: ElementRef<HTMLElement>;
    @Output() hideModalEmitter = new EventEmitter();
    @Output() loginEmitter = new EventEmitter();
-
-   constructor(private router: Router) {}
 
    @HostListener('document:click', ['$event'])
    handler(event: PointerEvent) {

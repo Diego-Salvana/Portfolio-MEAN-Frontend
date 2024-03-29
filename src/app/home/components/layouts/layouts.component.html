@@ -1,7 +1,11 @@
 <section id="layouts">
   <app-add-button *ngIf="isLogged$ | async"></app-add-button>
 
-  <h2>Maquetado</h2>
+  <h2 class="layouts__title">Maquetado</h2>
+  <p class="layouts__description">
+    <span>Las siguientes son soluciones a desafíos de la página </span>
+    <a href="https://www.frontendmentor.io/home" target="_blank" rel="noreferrer">Frontend Mentor</a>
+  </p>
 
   <div class="m-auto cards-container">
     <div #layoutCard *ngFor="let item of layoutProjectsMock" class="card shadow-3">

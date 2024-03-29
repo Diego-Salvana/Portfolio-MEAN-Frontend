@@ -19,11 +19,7 @@ export function messageInfo(
    return messageToast;
 }
 
-export function messageSuccess(
-   obs: Subject<any>,
-   detail: string,
-   key?: string
-): MessageToast {
+export function messageSuccess(obs: Subject<any>, detail: string, key?: string): MessageToast {
    const messageToast: MessageToast = {
       key,
       severity: 'success',

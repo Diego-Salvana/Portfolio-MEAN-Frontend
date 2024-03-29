@@ -1,9 +1,8 @@
 <form [formGroup]="formSkill" (ngSubmit)="onSaveEmit()" autocomplete="off">
-  <h2 class="form-title pb-0">Nueva Habilidad</h2>
-  <div
-    class="form-skill-icon"
-    [innerHTML]="formSkill.value.iconHTML || icon"
-  ></div>
+  <h2 class="form-title pb-0">Nueva Tecnología</h2>
+
+  <div class="form-skill-icon" [innerHTML]="svgContent || icon"></div>
+
   <div class="field">
     <span class="p-float-label">
       <input
@@ -16,9 +15,7 @@
       />
       <label for="skillName">Nombre</label>
     </span>
-    <small *ngIf="isInvalidField('name')" class="p-error block">
-      El campo es obligatorio.
-    </small>
+    <small *ngIf="isInvalidField('name')" class="p-error block"> El campo es obligatorio. </small>
   </div>
 
   <div class="field">
@@ -27,33 +24,13 @@
         pInputTextarea
         id="skillIcon"
         class="w-12 text-lg"
-        [rows]="3"
-        [autoResize]="true"
+        [rows]="6"
         formControlName="iconHTML"
         (blur)="onBlurEvent($event)"
       ></textarea>
-      <label for="skillIcon">Ícono (HTML)</label>
+      <label for="skillIcon">Ícono (SVG)</label>
     </span>
-    <small *ngIf="isInvalidField('iconHTML')" class="p-error block">
-      El campo es obligatorio.
-    </small>
-  </div>
-
-  <div class="field">
-    <span class="p-float-label">
-      <input
-        pInputText
-        id="skillColor"
-        class="p-inputtext-lg w-12"
-        type="text"
-        formControlName="color"
-        (blur)="onBlurEvent($event)"
-      />
-      <label for="skillColor">Color</label>
-    </span>
-    <small *ngIf="isInvalidField('color')" class="p-error block">
-      El campo es obligatorio.
-    </small>
+    <small *ngIf="isInvalidField('iconHTML')" class="p-error block"> El campo es obligatorio. </small>
   </div>
 
   <div class="line-form"></div>
@@ -66,6 +43,7 @@
       [loadingState]="loadingBtn"
     ></app-button-primeng>
   </div>
+
   <div class="text-center mt-5">
     <app-btn-back-portfolio></app-btn-back-portfolio>
   </div>

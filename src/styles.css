@@ -2,10 +2,6 @@
    font-family: Epilogue;
    src: url("./assets/fonts/Epilogue-VariableFont_wght.ttf");
 }
-@font-face {
-   font-family: PoppinsRegular;
-   src: url("./assets/fonts/Poppins-Regular.ttf");
-}
 
 :root {
    --almost-white: hsl(0, 0%, 98%);
@@ -33,7 +29,7 @@ html,
 body {
    width: 100%;
    background-color: var(--almost-white);
-   font-family: Epilogue;
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
    color: var(--text-color);
    scroll-behavior: smooth;
    overflow-x: hidden;
@@ -42,10 +38,12 @@ body {
 section {
    position: relative;
    padding: 4rem 24px;
+   max-width: 2200px;
+   margin: auto;
 }
 
-section > h2 {
-   margin-bottom: 4.5rem;
+section h2 {
+   margin-bottom: 4rem;
    text-align: center;
    color: var(--almost-black);
    font-size: calc(2.2rem + 0.3vw);
@@ -54,14 +52,12 @@ section > h2 {
 
 @media screen and (min-width: 1440px) {
    section {
-      padding-top: 6rem;
-      padding-bottom: 6rem;
       padding: 6rem 160px;
    }
 
    section > h2 {
       font-size: 45px;
-      margin-bottom: 6.5rem;
+      margin-bottom: 6rem;
    }
 }
 

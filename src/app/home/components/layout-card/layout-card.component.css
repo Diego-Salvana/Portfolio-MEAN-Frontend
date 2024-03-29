@@ -5,6 +5,8 @@
 
 .img-container {
    height: 200px;
+   filter: brightness(0.95);
+   transition: all 0.1s ease-in;
 }
 
 .img-container img {
@@ -59,6 +61,7 @@
 @media screen and (min-width: 1440px) {
    .img-container {
       height: 220px;
+      filter: grayscale(1);
    }
 
    .layout-card footer {
@@ -66,6 +69,10 @@
       bottom: 0;
       width: 100%;
       transform: translateY(100%);
+   }
+
+   .layout-card:hover .img-container {
+      filter: brightness(0.9) grayscale(0);
    }
 
    .layout-card:hover footer {

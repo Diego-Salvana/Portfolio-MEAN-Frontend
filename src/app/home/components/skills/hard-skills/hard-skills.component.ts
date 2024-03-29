@@ -25,13 +25,13 @@ export class HardSkillsComponent implements AfterViewInit {
    @Input() isLogged$!: Observable<boolean>;
    @Output() onEdit: EventEmitter<any> = new EventEmitter();
    @Output() onDelete: EventEmitter<any> = new EventEmitter();
-   @ViewChild('skill') skillElement!: ElementRef<HTMLElement>;
+   @ViewChild('skillIcon') skillElement!: ElementRef<HTMLElement>;
    svgContent!: SafeHtml;
 
    constructor(
       private sanitizer: DomSanitizer,
-      private changeDetector: ChangeDetectorRef,
-      private renderer2: Renderer2
+      private renderer2: Renderer2,
+      private changeDetector: ChangeDetectorRef
    ) {}
 
    ngAfterViewInit(): void {

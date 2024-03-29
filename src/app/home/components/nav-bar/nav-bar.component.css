@@ -44,20 +44,45 @@ p-toolbar ::ng-deep .p-toolbar {
    display: none;
    align-items: center;
    padding-top: 10px;
-   font-size: 16px;
+   font-size: 15px;
+   font-weight: 400;
    margin-left: 28px;
 }
 
 .p-toolbar-group-start .menu li {
-   font-family: Epilogue;
-   color: var(--surface-400);
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+   color: var(--almost-white);
    margin: 0 16px;
+   position: relative;
    transition: all 0.1s linear;
 }
 
 .p-toolbar-group-start .menu li:hover {
    cursor: pointer;
    color: var(--almost-white);
+}
+
+.btn-social a {
+   position: relative;
+}
+
+.p-toolbar-group-start .menu li::after,
+.btn-social a::after {
+   content: "";
+   position: absolute;
+   bottom: -4px;
+   left: 0;
+   right: 0;
+   margin: auto;
+   height: 2px;
+   background-color: var(--almost-white);
+   width: 0px;
+   transition: all 0.1s linear;
+}
+
+.p-toolbar-group-start .menu li:hover::after,
+.btn-social a:hover::after {
+   width: 100%;
 }
 
 .p-toolbar-group-end {
@@ -68,12 +93,8 @@ p-toolbar ::ng-deep .p-toolbar {
 
 .p-toolbar-group-end i {
    font-size: 21px;
-   color: var(--surface-300);
-   transition: all 0.1s ease-in;
-}
-
-.p-toolbar-group-end i:hover {
    color: var(--almost-white);
+   transition: all 0.1s ease-in;
 }
 
 .btn-social,
@@ -108,9 +129,10 @@ p-toolbar ::ng-deep .p-toolbar {
 
 .navBtn ::ng-deep button {
    min-width: 126px;
-   font-family: Epilogue;
+   font-size: 15px;
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
    padding: 10px 16px 8px;
-   background-color: var(--surface-200);
+   background-color: transparent;
    color: var(--almost-white);
    border: none;
 }

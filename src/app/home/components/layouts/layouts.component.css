@@ -1,3 +1,23 @@
+.layouts__title {
+   margin-bottom: 16px;
+}
+
+.layouts__description {
+   font-size: 16px;
+   color: var(--medium-gray);
+   text-align: center;
+   margin-bottom: 4rem;
+}
+
+.layouts__description a {
+   color: var(--medium-gray);
+   text-decoration: underline;
+}
+
+.layouts__description a:hover {
+   color: var(--almost-black);
+}
+
 .cards-container {
    display: grid;
    grid-template-columns: repeat(auto-fit, minmax(300px, max-content));
@@ -19,7 +39,16 @@
    opacity: 1;
 }
 
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1470px) {
+   .layouts__title {
+      margin-bottom: 32px;
+   }
+
+   .layouts__description {
+      font-size: 19px;
+      margin-bottom: 104px;
+   }
+
    .cards-container {
       grid-template-columns: repeat(auto-fit, minmax(350px, max-content));
       justify-content: space-between;

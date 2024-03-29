@@ -1,12 +1,6 @@
-import {
-   Component,
-   EventEmitter,
-   Input,
-   OnDestroy,
-   OnInit,
-   Output,
-} from '@angular/core';
+import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { Subscription } from 'rxjs';
 
 import { MessageService } from 'primeng/api';
@@ -27,24 +21,29 @@ export class ModalFormComponent implements OnInit, OnDestroy {
    private subscription = new Subscription();
    loadingBtn: boolean = false;
    icon: string = "<i class='pi pi-minus'></i>";
-
    formSkill: FormGroup = this.formBuilder.group({
       _id: null,
       name: ['', Validators.required],
       iconHTML: ['', Validators.required],
       color: ['', Validators.required],
    });
+   svgContent!: SafeHtml;
 
    constructor(
       private formBuilder: FormBuilder,
       private skillsSvc: SkillsService,
       private messageSvc: MessageService,
+      private sanitizer: DomSanitizer
    ) {}
 
    ngOnInit(): void {
-      this.subscription = this.skillsSvc.skillEdit$.subscribe((data) =>
-         this.formSkill.reset(data)
-      );
+      this.subscription = this.skillsSvc.skillEdit$.subscribe((data) => {
+         this.formSkill.reset(data);
+      });
+
+      this.formSkill.valueChanges.subscribe(({ iconHTML }) => {
+         this.svgContent = this.sanitizer.bypassSecurityTrustHtml(iconHTML);
+      });
    }
 
    ngOnDestroy(): void {

@@ -21,7 +21,9 @@ export class ProjectsService {
    constructor(private http: HttpClient) {}
 
    getAll(): Observable<Project[]> {
-      return this.http.get<Project[]>(`${this.baseUrl}/projects`);
+      return this.http.get<Project[]>(`${this.baseUrl}/projects`).pipe(
+         tap(data => console.log(data))
+      );
    }
 
    getById(id: string): Observable<Project> {

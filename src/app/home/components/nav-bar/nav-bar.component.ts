@@ -13,8 +13,8 @@ export class NavBarComponent implements OnInit, OnDestroy {
    @Input() isLogged$!: Observable<boolean>;
    labelBtn: string = '';
    isLogged: boolean = false;
-   private subscription = new Subscription();
    hideModal = true;
+   private subscription = new Subscription();
    private htmlElement = document.querySelector('html');
 
    constructor(private router: Router, private authSvc: AuthService) {}
@@ -49,7 +49,12 @@ export class NavBarComponent implements OnInit, OnDestroy {
    chekHtmlScroll(): void {
       if (!this.htmlElement) return;
 
-      if (this.hideModal) this.htmlElement.style.overflowY = 'auto';
-      else this.htmlElement.style.overflowY = 'hidden';
+      if (this.hideModal) {
+         this.htmlElement.style.overflowY = 'auto';
+         this.htmlElement.style.position = 'unset';
+      } else {
+         this.htmlElement.style.overflowY = 'scroll';
+         this.htmlElement.style.position = 'fixed';
+      }
    }
 }

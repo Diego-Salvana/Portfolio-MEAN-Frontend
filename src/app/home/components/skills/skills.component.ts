@@ -19,10 +19,7 @@ export class SkillsComponent implements OnInit {
 
    skillsM: Skill[] = skillsMock;
 
-   constructor(
-      private skillsSvc: SkillsService,
-      private confirmationSvc: ConfirmationService
-   ) {}
+   constructor(private skillsSvc: SkillsService, private confirmationSvc: ConfirmationService) {}
 
    ngOnInit(): void {
       this.skillsSvc.getAll().subscribe((data) => (this.skills = data));

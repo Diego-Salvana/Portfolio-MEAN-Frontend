@@ -1,15 +1,16 @@
-import { Component, EventEmitter, Input, Output, Renderer2 } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, Renderer2 } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import * as formHelper from '../../../shared/helpers/form.helper';
 import { Skill } from 'src/app/shared/interfaces/skill.interface';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 @Component({
    selector: 'app-form-skill',
    templateUrl: './form-skill.component.html',
    styleUrls: ['./form-skill.component.css'],
 })
-export class FormSkillComponent {
+export class FormSkillComponent implements OnInit {
    @Input() btnLabel: string = '';
    @Input() loadingBtn: boolean = false;
    @Output() onSave: EventEmitter<Skill> = new EventEmitter();
@@ -19,8 +20,19 @@ export class FormSkillComponent {
       iconHTML: ['', Validators.required],
       color: ['', Validators.required],
    });
+   svgContent!: SafeHtml;
 
-   constructor(private formBuilder: FormBuilder, private renderer2: Renderer2) {}
+   constructor(
+      private formBuilder: FormBuilder,
+      private renderer2: Renderer2,
+      private sanitizer: DomSanitizer
+   ) {}
+
+   ngOnInit(): void {
+      this.formSkill.valueChanges.subscribe(({ iconHTML }) => {
+         this.svgContent = this.sanitizer.bypassSecurityTrustHtml(iconHTML);
+      });
+   }
 
    onSaveEmit(): void {
       formHelper.submitForm(this.formSkill, this.onSave);

@@ -1,38 +1,61 @@
-<footer class="footer">
-  <div class="flex flex-column lg:flex-row justify-content-between pb-4">
-    <div class="pb-4 lg:pb-2">
-      <ul class="list flex flex-wrap column-gap-3 list-none lg:mr-8">
-        <li><span routerLink="/" fragment="inicio">Inicio</span></li>
-        <li><span routerLink="/" fragment="acerca">Acerca</span></li>
-        <li><span routerLink="/" fragment="proyectos">Proyectos</span></li>
-        <li><span routerLink="/" fragment="habilidades">Habilidades</span></li>
-        <li><span routerLink="/" fragment="formacion">Formación</span></li>
+<footer id="contact" class="footer">
+  <section>
+    <div class="contact">
+      <h2 class="contact__title">Contacto</h2>
+
+      <form #myForm [formGroup]="contactForm" class="contact__form" (ngSubmit)="sendEmail()">
+        <fieldset>
+          <input formControlName="name" type="text" placeholder="Nombre" name="user_name" />
+          <p class="error-text">Escribe un nombre</p>
+        </fieldset>
+        <fieldset>
+          <input formControlName="email" type="email" placeholder="Email" name="user_email" />
+          <p class="error-text">Escribe un email válido</p>
+        </fieldset>
+        <fieldset>
+          <textarea
+            formControlName="message"
+            cols="30"
+            rows="6"
+            placeholder="Mensaje"
+            name="message"
+          ></textarea>
+          <p class="error-text">Escribe un mensaje</p>
+        </fieldset>
+
+        <button #btnSubmit class="btn-submit">Enviar</button>
+      </form>
+    </div>
+
+    <div class="line"></div>
+
+    <div class="nav-menu">
+      <ul class="nav-menu__list">
+        <li routerLink="/" fragment="initial">Inicio</li>
+        <li routerLink="/" fragment="projects">Proyectos</li>
+        <li routerLink="/" fragment="technologies">Herramientas</li>
+        <li routerLink="/" fragment="layouts">Maquetado</li>
+        <li routerLink="/" fragment="contact">Contacto</li>
       </ul>
+
+      <div class="nav-menu__social">
+        <span>Redes: </span>
+
+        <div class="btns">
+          <a href="https://www.linkedin.com/in/diego-salvana/" target="_blank" rel="noreferrer" class="mr-3">
+            <i class="pi pi-linkedin"></i>
+          </a>
+          <a href="https://github.com/Diego-Salvana" target="_blank" rel="noreferrer" class="mr-3">
+            <i class="pi pi-github"></i>
+          </a>
+        </div>
+      </div>
     </div>
-    <div class="sm:pb-2 contact">
-      <span class="text-xl">Contacto: </span><span>salvanadiego@gmail.com</span>
-    </div>
-  </div>
-  <div class="media-icons sm:hidden">
-    <a
-      href="https://www.linkedin.com/in/diego-salva%C3%B1%C3%A1-38b479246/"
-      target="_blank"
-      rel="noopener"
-      class="mr-3"
-    >
-      <i class="pi pi-linkedin"></i>
-    </a>
-    <a
-      href="https://github.com/Diego-Salvana"
-      target="_blank"
-      rel="noopener"
-      class="mr-3"
-    >
-      <i class="pi pi-github"></i>
-    </a>
-  </div>
-  <div class="line"></div>
-  <div class="py-4">
-    <p class="text-center">Copyrigth © 2023</p>
-  </div>
+  </section>
 </footer>
+
+<p-toast
+  [breakpoints]="{ '500px': { width: '100%', right: '0', left: '0' } }"
+  position="bottom-right"
+  key="email"
+></p-toast>

@@ -1,18 +1,39 @@
 :host {
    --skill-width-mobile: 70px;
-   --skill-width-desktop: 90px;
+   --skill-width-desktop: 80px;
 }
 
 .skill {
    display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   position: relative;
+   transition: all 0.1s ease-in;
+}
+
+.skill__icon {
+   display: flex;
    justify-content: center;
    align-items: center;
    width: var(--skill-width-mobile);
+   height: 100px;
+   filter: grayscale(1);
    transition: all 0.1s linear;
 }
 
+.skill__icon:hover {
+   filter: brightness(0.95) grayscale(0);
+}
+
+.skill__name {
+   font-weight: 500;
+   position: absolute;
+   bottom: -5px;
+}
+
 .reduce-width {
-   width: calc(var(--skill-width-mobile) * 0.85);
+   width: calc(var(--skill-width-mobile) * 0.8);
 }
 
 .increase-width {
@@ -20,16 +41,20 @@
 }
 
 @media screen and (min-width: 1440px) {
-   .skill {
+   .skill__icon {
       width: var(--skill-width-desktop);
    }
 
-   .skill:hover {
+   .skill__icon:hover {
       transform: scale(1.2);
    }
 
+   .skill__name {
+      bottom: -12px;
+   }
+
    .reduce-width {
-      width: calc(var(--skill-width-desktop) * 0.85);
+      width: calc(var(--skill-width-desktop) * 0.8);
    }
 
    .increase-width {

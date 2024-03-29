@@ -1,12 +1,9 @@
 <app-spinner [availableSpinner]="availableSpinner"></app-spinner>
 
-<div>
-  <app-header [isLogged$]="isLogged$"></app-header>
-  <app-projects [isLogged$]="isLogged$" [documentScroll$]="documentScroll$"></app-projects>
-  <app-skills [isLogged$]="isLogged$" (modalEmit)="changeAvailableSpinner($event)"></app-skills>
-  <app-layouts [isLogged$]="isLogged$"></app-layouts>
-
-  <app-footer></app-footer>
-</div>
+<app-header [isLogged$]="isLogged$"></app-header>
+<app-projects [isLogged$]="isLogged$" [documentScroll$]="documentScroll$"></app-projects>
+<app-skills [isLogged$]="isLogged$" (modalEmit)="changeAvailableSpinner($event)"></app-skills>
+<app-layouts [isLogged$]="isLogged$"></app-layouts>
+<app-footer></app-footer>
 
 <app-alert-confirm key="deleteAlert"></app-alert-confirm>

@@ -1,6 +1,6 @@
 <div class="card-project">
-  <div class="card-project__img-container">
-    <img src="../../../../assets/images/miniatura-portafolio.png" alt="Project Image" />
+  <div class="card-project__img-container shadow-3">
+    <img [src]="imgRoute" alt="Project Image" />
   </div>
 
   <div class="card-project__description">
@@ -11,9 +11,7 @@
 
     <h3 class="project-title">{{ name }}</h3>
 
-    <p class="text-description mb-2">{{ description }}</p>
-
-    <!-- <p class="text-description mb-2">La aplicación permite buscar información sobre países de todo el mundo. Cuenta con la posibilidad de registrar usuarios y una sección de favoritos.</p> -->
+    <p class="text-description mb-2">{{ splitDescription().description }}</p>
 
     <p class="technologies"><strong>Tecnologías:</strong> {{ splitDescription().technologies }}</p>
 

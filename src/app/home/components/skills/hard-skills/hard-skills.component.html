@@ -1,8 +1,10 @@
-<div>
-  <div *ngIf="isLogged$ | async" class="flex justify-content-center pb-3">
+<div class="skill">
+  <div *ngIf="isLogged$ | async" class="flex justify-content-center">
     <app-edit-button (click)="editEmit()"></app-edit-button>
     <app-delete-button (click)="deleteEmit()"></app-delete-button>
   </div>
 
-  <div #skill class="skill" [innerHtml]="svgContent" [title]="name"></div>
+  <div #skillIcon class="skill__icon" [innerHtml]="svgContent"></div>
+
+  <h4 class="skill__name">{{ name }}</h4>
 </div>

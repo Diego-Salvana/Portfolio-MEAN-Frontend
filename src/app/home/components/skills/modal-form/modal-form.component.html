@@ -8,64 +8,38 @@
   (onHide)="hide()"
 >
   <ng-template pTemplate="header">
-    <h3 class="text-3xl font-normal">Modicficar Habilidad</h3>
+    <h3 class="text-3xl font-normal">Modicficar Tecnología</h3>
   </ng-template>
   <div>
     <form [formGroup]="formSkill" (ngSubmit)="submit()" autocomplete="off">
-      <div
-        class="form-skill-icon"
-        [innerHTML]="formSkill.value.iconHTML || icon"
-      ></div>
+      <div class="form-skill-icon" [innerHTML]="svgContent || icon"></div>
+
       <div class="field">
         <span class="p-float-label">
-          <input
-            id="skillName"
-            class="p-inputtext-lg w-12"
-            type="text"
-            pInputText
-            formControlName="name"
-          />
+          <input id="skillName" class="p-inputtext-lg w-12" type="text" pInputText formControlName="name" />
           <label for="skillName">Nombre</label>
         </span>
-        <small *ngIf="invalidField('name')" class="p-error block">
-          El campo es obligatorio.
-        </small>
+        <small *ngIf="invalidField('name')" class="p-error block"> El campo es obligatorio. </small>
       </div>
 
       <div class="field">
         <span class="p-float-label">
           <textarea
             id="skillIcon"
-            [rows]="3"
+            [rows]="6"
             pInputTextarea
             class="w-12 text-lg"
             formControlName="iconHTML"
           ></textarea>
-          <label for="skillIcon">Ícono (HTML)</label>
+          <label for="skillIcon">Ícono (SVG)</label>
         </span>
-        <small *ngIf="invalidField('iconHTML')" class="p-error block">
-          El campo es obligatorio.
-        </small>
+        <small *ngIf="invalidField('iconHTML')" class="p-error block"> El campo es obligatorio. </small>
       </div>
 
-      <div class="field">
-        <span class="p-float-label">
-          <input
-            id="color"
-            class="p-inputtext-lg w-12"
-            type="text"
-            pInputText
-            formControlName="color"
-          />
-          <label for="color">Color</label>
-        </span>
-        <small *ngIf="invalidField('color')" class="p-error block">
-          El campo es obligatorio.
-        </small>
-      </div>
       <button type="submit" style="display: none"></button>
     </form>
   </div>
+
   <ng-template pTemplate="footer">
     <app-button-primeng
       label="Ok"

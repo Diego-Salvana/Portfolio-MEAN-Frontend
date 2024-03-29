@@ -3,11 +3,14 @@
 }
 
 .form-skill-icon {
-   height: 10rem;
-   font-size: 6rem;
+   width: 5rem;
+   height: 7rem;
+   font-size: 3rem;
    display: flex;
    justify-content: center;
    align-items: center;
+   padding-bottom: 1rem;
+   margin: auto;
    overflow: hidden;
    color: cadetblue;
 }
@@ -24,4 +27,11 @@
 .p-inputtext:enabled:hover,
 .p-inputtext:enabled:focus {
    border-color: #4fc3f7;
+}
+
+@media screen and (min-width: 1440px) {
+   .form-skill-icon {
+      width: 6rem;
+      height: 8rem;
+   }
 }
