@@ -1,0 +1,7 @@
+{
+   "editor.cursorSmoothCaretAnimation": "on",
+  "editor.fontSize": 21,
+  "editor.fontWeight": "normal",
+  "editor.fontVariations": false,
+  "tabnine.debounceMilliseconds": 200
+}
