@@ -32,20 +32,9 @@ export class AppComponent implements OnInit, AfterViewInit {
    }
 
    ngAfterViewInit(): void {
-      this.projectsSvc.toastContent$.subscribe((messageToast) =>
-         this.messageSvc.add(messageToast)
-      );
-
-      this.aboutMeSvc.toastContent$.subscribe((messageToast) =>
-         this.messageSvc.add(messageToast)
-      );
-
-      this.studiesSvc.toastContent$.subscribe((messageToast) =>
-         this.messageSvc.add(messageToast)
-      );
-
-      this.skillsSvc.toastContent$.subscribe((messageToast) =>
-         this.messageSvc.add(messageToast)
-      );
+      this.projectsSvc.toastContent$.subscribe((messageToast) => this.messageSvc.add(messageToast));
+      this.aboutMeSvc.toastContent$.subscribe((messageToast) => this.messageSvc.add(messageToast));
+      this.studiesSvc.toastContent$.subscribe((messageToast) => this.messageSvc.add(messageToast));
+      this.skillsSvc.toastContent$.subscribe((messageToast) => this.messageSvc.add(messageToast));
    }
 }

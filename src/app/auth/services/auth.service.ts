@@ -1,8 +1,4 @@
-import {
-   HttpClient,
-   HttpErrorResponse,
-   HttpHeaders,
-} from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
@@ -29,23 +25,18 @@ export class AuthService {
    }
 
    login(body: Auth): Observable<AuthResponse> {
-      return this.http
-         .post<AuthResponse>(`${this.baseUrl}/auth/login`, body)
-         .pipe(
-            tap((resp) => {
-               if (resp.token) {
-                  localStorage.setItem('jwToken', resp.token);
-                  this.setIsLogged(true);
-               }
-            }),
-            catchError((err: HttpErrorResponse) => {
-               const message =
-                  err.status === 400
-                     ? 'Usuario o contraseña inválidos'
-                     : 'Error de servidor';
-               throw messageError(err, message, 'loginToast');
-            })
-         );
+      return this.http.post<AuthResponse>(`${this.baseUrl}/auth/login`, body).pipe(
+         tap((resp) => {
+            if (resp.token) {
+               localStorage.setItem('jwToken', resp.token);
+               this.setIsLogged(true);
+            }
+         }),
+         catchError((err: HttpErrorResponse) => {
+            const message = err.status === 400 ? 'Usuario o contraseña inválidos' : 'Error de servidor';
+            throw messageError(err, message, 'loginToast');
+         })
+      );
    }
 
    verifyToken(): Observable<boolean> {
@@ -55,15 +46,13 @@ export class AuthService {
          spinner: 'on',
       });
 
-      return this.http
-         .get<AuthResponse>(`${this.baseUrl}/auth/refresh`, { headers })
-         .pipe(
-            map((resp) => {
-               localStorage.setItem('jwToken', resp.token);
-               this.setIsLogged(true);
-               return true;
-            }),
-            catchError(() => of(false))
-         );
+      return this.http.get<AuthResponse>(`${this.baseUrl}/auth/refresh`, { headers }).pipe(
+         map((resp) => {
+            localStorage.setItem('jwToken', resp.token);
+            this.setIsLogged(true);
+            return true;
+         }),
+         catchError(() => of(false))
+      );
    }
 }

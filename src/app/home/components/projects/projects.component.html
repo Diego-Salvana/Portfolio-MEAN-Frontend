@@ -6,7 +6,7 @@
   <div class="m-auto overflow-y-hidden cards-container">
     <div #projectCard *ngFor="let item of projects" class="card-project">
       <app-card-project
-        imgRoute="../../../../assets/images/proyecto_{{ item._id }}.jpg"
+        imgRoute="./assets/images/proyecto_{{ item._id }}.jpg"
         editLink="/edition/edit/project/{{ item._id }}"
         [name]="item.name"
         [description]="item.description"
