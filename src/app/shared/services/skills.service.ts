@@ -34,10 +34,10 @@ export class SkillsService {
       let url: string = `${this.baseUrl}/skills/${skill._id}`;
       return this.http.put<Skill>(url, skill).pipe(
          tap(() => {
-            serviceHelper.messageInfo(this.toastContent, 'Habilidad modificada exitosamente', 't-1');
+            serviceHelper.messageInfo(this.toastContent, 'Herramienta modificada exitosamente.', 't-1');
          }),
          catchError((err: HttpErrorResponse) => {
-            throw serviceHelper.messageError(err, 'No se pudo modificar la habilidad', 't-1');
+            throw serviceHelper.messageError(err, 'No se pudo modificar la herramienta.', 't-1');
          })
       );
    }
@@ -45,32 +45,43 @@ export class SkillsService {
    create(skill: Skill): Observable<Skill> {
       let url: string = `${this.baseUrl}/skills`;
       return this.http.post<Skill>(url, skill).pipe(
-         tap(() => {
-            serviceHelper.messageSuccess(this.toastContent, 'Habilidad agregada exitosamente', 't-1');
-         }),
+         tap(() =>
+            serviceHelper.messageSuccess(
+               this.toastContent,
+               'Habilidad agregada exitosamente',
+               't-1'
+            )
+         ),
          catchError((err: HttpErrorResponse) => {
             const message =
                err.error === 'SKILL_ALREADY_EXISTS'
-                  ? 'La habilidad ya existe'
-                  : 'No se pudo crear la habilidad';
+                  ? 'La herramienta ya existe.'
+                  : 'No se pudo crear la herramienta.';
             throw serviceHelper.messageError(err, message);
          })
       );
    }
 
    delete(id: string): Observable<DeleteResponse> {
-      return this.http.delete<DeleteResponse>(`${this.baseUrl}/skills/${id}`).pipe(
-         tap(() => {
-            serviceHelper.messageInfo(this.toastContent, 'Se eliminó la habilidad', 't-1', 'Borrado');
-         }),
-         catchError((err: HttpErrorResponse) => {
-            throw serviceHelper.messageError(
-               err,
-               'No se pudo eliminar la habilidad',
-               't-1',
-               this.toastContent
-            );
-         })
-      );
+      return this.http
+         .delete<DeleteResponse>(`${this.baseUrl}/skills/${id}`)
+         .pipe(
+            tap(() =>
+               serviceHelper.messageInfo(
+                  this.toastContent,
+                  'Se eliminó la habilidad',
+                  't-1',
+                  'Borrado'
+               )
+            ),
+            catchError((err: HttpErrorResponse) => {
+               throw serviceHelper.messageError(
+                  err,
+                  'No se pudo eliminar la habilidad',
+                  't-1',
+                  this.toastContent
+               );
+            })
+         );
    }
 }

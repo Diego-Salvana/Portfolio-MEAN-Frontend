@@ -31,9 +31,11 @@ export class ProjectsService {
       const url: string = `${this.baseUrl}/projects/${project._id}`;
 
       return this.http.put<Project>(url, project).pipe(
-         tap(() => serviceHelper.messageInfo(this.toastContent, 'Proyecto modificado exitosamente', 't-1')),
+         tap(() => {
+            serviceHelper.messageInfo(this.toastContent, 'Proyecto modificado exitosamente.', 't-1');
+         }),
          catchError((err: HttpErrorResponse) => {
-            throw serviceHelper.messageError(err, 'No se pudo modificar el proyecto');
+            throw serviceHelper.messageError(err, 'No se pudo modificar el proyecto.');
          })
       );
    }
@@ -42,20 +44,24 @@ export class ProjectsService {
       let url: string = `${this.baseUrl}/projects`;
 
       return this.http.post<Project>(url, project).pipe(
-         tap(() => serviceHelper.messageSuccess(this.toastContent, 'Proyecto agregado exitosamente', 't-1')),
+         tap(() => {
+            serviceHelper.messageSuccess(this.toastContent, 'Proyecto agregado exitosamente.', 't-1');
+         }),
          catchError((err: HttpErrorResponse) => {
-            throw serviceHelper.messageError(err, 'No se pudo crear el proyecto');
+            throw serviceHelper.messageError(err, 'No se pudo crear el proyecto.');
          })
       );
    }
 
    delete(id: string): Observable<DeleteResponse> {
       return this.http.delete<DeleteResponse>(`${this.baseUrl}/projects/${id}`).pipe(
-         tap(() => serviceHelper.messageInfo(this.toastContent, 'Se eliminó el proyecto', 't-1', 'Borrado')),
+         tap(() => {
+            serviceHelper.messageInfo(this.toastContent, 'Se eliminó el proyecto.', 't-1', 'Borrado');
+         }),
          catchError((err: HttpErrorResponse) => {
             throw serviceHelper.messageError(
                err,
-               'No se pudo eliminar el proyecto',
+               'No se pudo eliminar el proyecto.',
                't-1',
                this.toastContent
             );
