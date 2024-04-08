@@ -20,11 +20,11 @@ export class EmailService {
          .then((res: EmailJSResponseStatus) => {
             if (res.status !== 200) throw { text: 'An error occurred while sending the email' };
 
-            return 'El mensaje se envió exitosamente';
+            return 'Tu mensaje se envió con éxito.';
          })
          .catch((err) => {
             console.error('Error:', err);
-            throw 'Ocurrió un error al enviar el mensaje';
+            throw 'Ocurrió un error al enviar el mensaje.';
          });
    }
 }

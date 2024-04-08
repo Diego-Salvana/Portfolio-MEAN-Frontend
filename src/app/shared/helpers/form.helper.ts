@@ -5,6 +5,8 @@ export function submitForm(form: FormGroup, emitter: EventEmitter<any>): void {
    if (form.invalid) {
       markAllAsDirty(form);
       form.markAllAsTouched();
+
+      console.error('Invalid form', form);
       return;
    }
 

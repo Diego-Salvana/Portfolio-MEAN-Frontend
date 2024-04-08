@@ -6,7 +6,6 @@ import { MessageService } from 'primeng/api';
 import { AboutMeService } from './shared/services/about-me.service';
 import { ProjectsService } from './shared/services/projects.service';
 import { SkillsService } from './shared/services/skills.service';
-import { StudiesService } from './shared/services/studies.service';
 import { AuthService } from './auth/services/auth.service';
 
 @Component({
@@ -20,7 +19,6 @@ export class AppComponent implements OnInit, AfterViewInit {
       private projectsSvc: ProjectsService,
       private messageSvc: MessageService,
       private aboutMeSvc: AboutMeService,
-      private studiesSvc: StudiesService,
       private skillsSvc: SkillsService,
       private authSvc: AuthService
    ) {}
@@ -34,7 +32,6 @@ export class AppComponent implements OnInit, AfterViewInit {
    ngAfterViewInit(): void {
       this.projectsSvc.toastContent$.subscribe((messageToast) => this.messageSvc.add(messageToast));
       this.aboutMeSvc.toastContent$.subscribe((messageToast) => this.messageSvc.add(messageToast));
-      this.studiesSvc.toastContent$.subscribe((messageToast) => this.messageSvc.add(messageToast));
       this.skillsSvc.toastContent$.subscribe((messageToast) => this.messageSvc.add(messageToast));
    }
 }

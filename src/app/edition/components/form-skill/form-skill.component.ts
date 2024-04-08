@@ -18,7 +18,7 @@ export class FormSkillComponent implements OnInit {
    formSkill: FormGroup = this.formBuilder.group({
       name: ['', Validators.required],
       iconHTML: ['', Validators.required],
-      color: ['', Validators.required],
+      color: ['_', Validators.required],
    });
    svgContent!: SafeHtml;
 
