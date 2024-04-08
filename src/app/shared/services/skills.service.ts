@@ -55,8 +55,8 @@ export class SkillsService {
          catchError((err: HttpErrorResponse) => {
             const message =
                err.error === 'SKILL_ALREADY_EXISTS'
-                  ? 'La herramienta ya existe'
-                  : 'No se pudo crear la herramienta';
+                  ? 'La herramienta ya existe.'
+                  : 'No se pudo crear la herramienta.';
             throw serviceHelper.messageError(err, message);
          })
       );
