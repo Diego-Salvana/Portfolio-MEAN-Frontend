@@ -1,12 +1,5 @@
 import { Injectable } from '@angular/core';
-import {
-   Storage,
-   StorageReference,
-   UploadResult,
-   getBlob,
-   ref,
-   uploadBytes,
-} from '@angular/fire/storage';
+import { Storage, StorageReference, UploadResult, getBlob, ref, uploadBytes } from '@angular/fire/storage';
 import { MessageService } from 'primeng/api';
 
 @Injectable({

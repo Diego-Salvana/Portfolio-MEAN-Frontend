@@ -23,19 +23,13 @@ export class AboutMeService {
    }
 
    save({ _id, aboutMeText }: AboutMe): Observable<AboutMe> {
-      return this.http
-         .put<AboutMe>(`${this.baseUrl}/about-me/${_id}`, { aboutMeText })
-         .pipe(
-            tap(() =>
-               serviceHelper.messageInfo(
-                  this.toastContent,
-                  'Acerca modificado exitosamente',
-                  't-1'
-               )
-            ),
-            catchError((err: HttpErrorResponse) => {
-               throw serviceHelper.messageError(err, 'No se pudo modificar Acerca')
-            })
-         );
+      return this.http.put<AboutMe>(`${this.baseUrl}/about-me/${_id}`, { aboutMeText }).pipe(
+         tap(() => {
+            serviceHelper.messageInfo(this.toastContent, 'Acerca modificado exitosamente', 't-1');
+         }),
+         catchError((err: HttpErrorResponse) => {
+            throw serviceHelper.messageError(err, 'No se pudo modificar Acerca');
+         })
+      );
    }
 }
