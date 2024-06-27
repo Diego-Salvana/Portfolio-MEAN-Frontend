@@ -18,12 +18,8 @@
    align-items: center;
    width: var(--skill-width-mobile);
    height: 100px;
-   filter: grayscale(1);
+   filter: brightness(0.95);
    transition: all 0.1s linear;
-}
-
-.skill__icon:hover {
-   filter: brightness(0.95) grayscale(0);
 }
 
 .skill__name {
